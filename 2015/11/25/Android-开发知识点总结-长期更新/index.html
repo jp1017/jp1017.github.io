@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+  <meta charset="utf-8">
+  
+  <title>Android 开发知识点总结(长期更新) | 安卓那些事儿</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="博客：    安卓之家微博：    追风917CSDN：    蒋朋的家简书：    追风917
+
+这个写到github上了，长期更新，点我github查看
+mipmap目录和drawable目录区别
+mipmap在使用上，把它当drawable用就好了。但是用mipmap系统会在缩放上提供一定的性能优化，因此图标最好放到mipmap目录下，看下官方总结：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 开发知识点总结(长期更新)">
+<meta property="og:url" content="http://jp1017.github.io/2015/11/25/Android-开发知识点总结-长期更新/index.html">
+<meta property="og:site_name" content="安卓那些事儿">
+<meta property="og:description" content="博客：    安卓之家微博：    追风917CSDN：    蒋朋的家简书：    追风917
+
+这个写到github上了，长期更新，点我github查看
+mipmap目录和drawable目录区别
+mipmap在使用上，把它当drawable用就好了。但是用mipmap系统会在缩放上提供一定的性能优化，因此图标最好放到mipmap目录下，看下官方总结：">
+<meta property="og:image" content="https://drscdn.500px.org/photo/125847083/m%3D2048/73f94791b61c290425bf7fc37209b895">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/20151016activity%E5%AE%8C%E6%95%B4%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%96%B9%E6%B3%95.jpg">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/20151016activity%E5%92%8Cfragment%E5%AE%8C%E6%95%B4%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%96%B9%E6%B3%95.jpg">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/20151016padding和margin.png">
+<meta property="og:updated_time" content="2016-05-13T01:36:26.056Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 开发知识点总结(长期更新)">
+<meta name="twitter:description" content="博客：    安卓之家微博：    追风917CSDN：    蒋朋的家简书：    追风917
+
+这个写到github上了，长期更新，点我github查看
+mipmap目录和drawable目录区别
+mipmap在使用上，把它当drawable用就好了。但是用mipmap系统会在缩放上提供一定的性能优化，因此图标最好放到mipmap目录下，看下官方总结：">
+  
+    <link rel="alternative" href="/atom.xml" title="安卓那些事儿" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xlah4.com1.z0.glb.clouddn.com/favicon.png">
+  
+  
+      <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+  
+  
+      <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+      <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+          fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+          scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+          search: undefined
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+      </script>
+  
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="http://7xlah4.com1.z0.glb.clouddn.com/ferrari.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">安卓开发</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">思想的流浪者</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜單</li>
+                        <li>標籤</li>
+                        
+                        <li>友情鏈接</li>
+                        
+                        
+                        <li>關於我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/jp1017" title="GitHub"></a>
+                            
+                                <a class="fa Email" target="_blank" href="/jp19891017@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1321395433/profile?topnav=1&wvr=6" title="新浪微博"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" title="简书"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Activity/">Activity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Annotation/">Annotation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bitmap/">Bitmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI/">CI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CardView/">CardView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CountDownTimer/">CountDownTimer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EventBus3/">EventBus3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HttpClient/">HttpClient</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/InputStream/">InputStream</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeakCanary/">LeakCanary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ToolBar/">ToolBar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USB摄像头/">USB摄像头</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ViewPager/">ViewPager</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genymotion/">genymotion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitignore/">gitignore</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gradle/">gradle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gradlew/">gradlew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/greenDAO/">greenDAO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar/">jar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jni/">jni</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logcat/">logcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tinker/">tinker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件/">事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件分发/">事件分发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二维码/">二维码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/年终总结/">年终总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信/">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/扫一扫/">扫一扫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/混淆/">混淆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图/">百度地图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/系统时间/">系统时间</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跑步/">跑步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于安卓开发</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">安卓开发</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="http://7xlah4.com1.z0.glb.clouddn.com/ferrari.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">安卓开发</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">思想的流浪者</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/jp1017" title="GitHub"></a>
+                            
+                                <a class="fa Email" target="_blank" href="/jp19891017@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1321395433/profile?topnav=1&wvr=6" title="新浪微博"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" title="简书"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Android-开发知识点总结-长期更新" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/25/Android-开发知识点总结-长期更新/" class="article-date">
+      <time datetime="2015-11-25T10:38:28.000Z" itemprop="datePublished">2015-11-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android 开发知识点总结(长期更新)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>博客：    <a href="http://jp1017.gitcafe.io/" target="_blank" rel="external">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+<p><img src="https://drscdn.500px.org/photo/125847083/m%3D2048/73f94791b61c290425bf7fc37209b895" alt="风景"></p>
+<p>这个写到github上了，长期更新，<a href="https://github.com/jp1017/Android-Collection" target="_blank" rel="external">点我github查看</a></p>
+<h1 id="mipmap目录和drawable目录区别">mipmap目录和drawable目录区别</h1><hr>
+<p>mipmap在使用上，把它当drawable用就好了。但是用mipmap系统会在缩放上提供一定的性能优化，因此图标最好放到mipmap目录下，看下官方总结：</p>
+<a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">It’s best practice to place your app icons <span class="keyword">in</span> mipmap- folders (not the drawable- folders) </span><br><span class="line">    because they are used at resolutions different from the device’s current density.</span><br></pre></td></tr></table></figure>
+<h1 id="屏幕尺寸与分辨率">屏幕尺寸与分辨率</h1><hr>
+<p>1.1 手机常见分辨率:<br>4:3</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th style="text-align:right">2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VGA： 640×480 (Video Graphics Array)</td>
+<td style="text-align:right">QVGA： 320×240 (Quarter VGA)</td>
+</tr>
+<tr>
+<td>HVGA： 480×320 (Half-size VGA)</td>
+<td style="text-align:right">SVGA： 800×600 (Super VGA)</td>
+</tr>
+</tbody>
+</table>
+<p>5:3</p>
+<p>WVGA 800×480 (Wide VGA)</p>
+<p>16:9</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th style="text-align:right">2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FWVGA： 854×480 (Full Wide VGA)</td>
+<td style="text-align:right">HD： 1920×1080 High Definition</td>
+</tr>
+<tr>
+<td>QHD： 960×540</td>
+<td style="text-align:right">720p： 1280×720 标清</td>
+</tr>
+<tr>
+<td>1080p 1920×1080 高清</td>
+</tr>
+</tbody>
+</table>
+<p>1.2 分辨率对应DPI</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th style="text-align:right">2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“HVGA： mdpi”</td>
+<td style="text-align:right">“WVGA： hdpi “</td>
+</tr>
+<tr>
+<td>“FWVGA： hdpi “</td>
+<td style="text-align:right">“QHD： hdpi “</td>
+</tr>
+<tr>
+<td>“720P： xhdpi”</td>
+<td style="text-align:right">“1080P： xxhdpi “</td>
+</tr>
+</tbody>
+</table>
+<h1 id="获取SHA1和MD5值">获取SHA1和MD5值</h1><hr>
+<p>如何获取安卓签名证书的SHA1和MD5值呢，这里用命令行操作，adt可以在设置里查看。<br>直接来了哈：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.android</span><br><span class="line">keytool -list -v -keystore debug.keystore</span><br></pre></td></tr></table></figure>
+<p>搞定！提示输入密码的时候输入android或者直接回车。</p>
+<h1 id="setEnabled">setEnabled</h1><hr>
+<p>View的setEnabled方法，使能控件，如果设置为false，该控件永远不会活动，不管设置为什么属性，都无效；<br>设置为true，表明激活该控件，控件处于活动状态，处于活动状态，就能响应事件了，比如触摸、点击事件等；<br>setEnabled就相当于一个总开关，只有总开关打开了，才能使用其他事件。<br>另外还有，setClickable，使能点击，设置为true时，表明控件可以点击，如果为false，就不能点击；注意，setOnClickListener方法会默认把控件的setClickable设置为true。</p>
+<h2 id="setFocusable">setFocusable</h2><p>使能控件获得焦点，设置为true时，并不是说立刻获得焦点，要想立刻获得焦点，得用requestFocus；<br>使能获得焦点，就是说具备获得焦点的机会、能力，当有焦点在控件之间移动时，控件就有这个机会、能力得到焦点。</p>
+<h1 id="onAttachedToWindow()">onAttachedToWindow()</h1><hr>
+<p>关于onAttachedToWindow()，要知道两点：</p>
+<ol>
+<li>onAttachedToWindow()运行在onResume之后；</li>
+<li>DecorView的LayoutParams是在ActivityThread的handleResumeActivity中设置的，并且该函数会调用Activity的onResume生命周期，所以在onResume之后可以设置窗体尺寸，也就是在onAttachedToWindow()方法里设置。<br>详细说明，请看这里：onAttachedToWindow()在整个Activity生命周期的位置及使用<br>补充两个图，activity和fragment完整生命周期方法：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>activity</th>
+<th>fragment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="http://7xlah4.com1.z0.glb.clouddn.com/20151016activity%E5%AE%8C%E6%95%B4%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%96%B9%E6%B3%95.jpg" alt="activity"></td>
+<td><img src="http://7xlah4.com1.z0.glb.clouddn.com/20151016activity%E5%92%8Cfragment%E5%AE%8C%E6%95%B4%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%96%B9%E6%B3%95.jpg" alt="fragment"></td>
+</tr>
+</tbody>
+</table>
+<h1 id="padding">padding</h1><hr>
+<p>View的padding属性是内边距，类似的是margin，外边距，一般用于view和view，如下图：<br><img src="http://7xlah4.com1.z0.glb.clouddn.com/20151016padding和margin.png" alt="padding"></p>
+<h1 id="使用dp和sp">使用dp和sp</h1><hr>
+<p>使用dp和sp适应不同屏幕，dp一般用于view，sp常用于文本<br>设置两个view之间的空间时，应该使用dp而不是px：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">Button</span> </span><br><span class="line">	<span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">	<span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">	<span class="attribute">android:text</span>=<span class="value">"@string/clickme"</span></span><br><span class="line">	<span class="attribute">android:layout_marginTop</span>=<span class="value">"20dp"</span></span><br><span class="line">	/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当指定文本尺寸时，始终应该使用sp：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">TextView</span></span><br><span class="line">	<span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">	<span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">	<span class="attribute">android:textSize</span>=<span class="value">"20sp"</span></span><br><span class="line">	/&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Android_Support包">Android Support包</h1><hr>
+<p>Google官方提供Android Support Library package来保证高版本SDK的向下兼容。通过使用Support包，可以让拥有最新SDK特性的应用运行在相应API(比如v7就是API Level 7即Android 2.1)及更高版本的设备之上。</p>
+<h3 id="命名">命名</h3><p>比如gradle 脚本引用 v7 包：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'com.android.support:appcompat-v7:23.4.0'</span></span><br></pre></td></tr></table></figure>
+<p>分三个部分：groupId:artifactId:version：</p>
+<ul>
+<li>groupId在Maven库中作为区别一类lib库的唯一标识，往往以包名来命名；</li>
+<li>artifactId是在一个包中的不同lib库的命名，比如support-v4、appcompat-v7等。这个命名规则后面的vX代表最小支持的API等级。v7代表最小支持Android API 7或更高；</li>
+<li>version代表改lib库的版本。</li>
+</ul>
+<h3 id="v4_Support_Library">v4 Support Library</h3><p>此包用在API lever 4(即Android 1.6)及更高版本之上。它包含了较多的内容，使用广泛，例如：Fragment，NotificationCompat，LoadBroadcastManager，ViewPager，PageTabStrip，Loader，FileProvider 等。</p>
+<h3 id="v7_Support_Libraries">v7 Support Libraries</h3><p>此包是针对API level 7(即Android 2.1)及以上版本而设计的，但是v7是要依赖v4这个包的，v7支持了Action Bar以及一些Theme的兼容。</p>
+<blockquote>
+<p>Note: v7 appcompat library<br>v7 appcompat library 是包含在 v7 Support Libraries里面的一个包，正是此包增加了Action Bar 用户界面的设计模式，并加入了对material design 的支持，是我们使用最多的一个兼容包。</p>
+</blockquote>
+<h3 id="v13_Support_Library">v13 Support Library</h3><p>此包是针对API level 13(即Android 3.2)及更高版本设计的，一般我们都不常用，平板开发中能用到，这里就不介绍了。</p>
+<h3 id="v17_Preference_Support_Library_for_TV">v17 Preference Support Library for TV</h3><p>此包主要是为了TV设备而设计。<br>常见问题分析：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">No resource found that matches the given name <span class="string">'@style/Theme.AppCompat.Light'</span></span><br></pre></td></tr></table></figure>
+<p>这种问题一般就是兼容包没处理好导致，那么导入v7库就好了，或者把AndroidManifest.xml文件里面，minSdkVersion改成14，甚至修改主题为@style/Theme.Light，哈哈，推荐第一种哦，导入v7包。</p>
+<h1 id="assets和res">assets和res</h1><hr>
+<ul>
+<li>assets:<br>不会在R.java文件下生成相应的标记，assets文件夹可以自己创建文件夹，必须使用AssetsManager类进行访问，存放到这里的资源在运行打包的时候都会打入程序安装包中，访问方法：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inputStreamReader = <span class="keyword">new</span> InputStreamReader(Context.getAssets().open(<span class="string">"test.json"</span>), <span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>res:<br>会在R.java文件下生成标记，这里的资源会在运行打包操作的时候判断哪些被使用到了，没有被使用到的文件资源是不会打包到安装包中的。<br>res/raw和assets文件夹来存放不需要系统编译成二进制的文件，例如字体文件等<br>res/xml:可以在Activity中使用getResource().getXML()读取这里的资源文件<br>res/raw:该目录下的文件可以直接复制到设备上，不能有子文件夹，编译软件时，这里的数据不需要编译，直接加入到程序安装包中，使用方法是getResource().OpenRawResources(ID),其中参数ID的形式是R.raw.XXX.</li>
+</ul>
+<h1 id="Android属性allowBackup">Android属性allowBackup</h1><hr>
+<p>最好设置成false，黑客易获取帐号密码登录你的应用，详情这里：Android 属性 allowBackup 安全风险浅析<br>尽管新版本1.0.32移除了backup 和 restore，还有旧版要提防哦。</p>
+<h1 id="include_merge_ViewStub在布局中的使用">include merge ViewStub在布局中的使用</h1><hr>
+<ul>
+<li>include</li>
+</ul>
+<p>单个组件的代码重用可用style，多个组件的共同重用可用include<br>include引用的layout的根标签：可以为viewGroup标签，也可为单个widget，或者是merge<br>经常会有同学在RelativeLayout中使用include标签<br>但是却发现include进来的控件无法用layout_alignParentBottom=”true”之类的标签来调整。这个真的非常恼火。其实解决方法非常简单，只要你在include的时候同时重载下layout_width和layout_height这两个标签就可以了。如果不重载，任何针对include的layout调整都是无效的！</p>
+<ul>
+<li>merge</li>
+</ul>
+<p>可以优化布局层级，一般用于FrameLayout。<br>merge布局和FrameLayout类似,相同的效果。不同的是 merge布局只能被标签包含，或者Activity.setContentView所使用。<br>当LayoutInflater遇到能被其他layout用包含进去，并不再另外生成ViewGroup容器，本元素也特别有用这个标签时，它会跳过它，并将内的元素添加到的父元素里。Activity能直接使用的原因是Activity的父元素是FrameLayout<br>merge能被其他layout用包含进去，并不再另外生成ViewGroup容器.就是说,会减少一层layout到达优化layout的目的</p>
+<p><strong>限制:</strong><br>只能作为XML布局的根标签使用。<br>当Inflate以开头的布局文件时，必须指定一个父ViewGroup，并且必须设定attachToRoot为true（参看inflate(int, android.view.ViewGroup, Boolean)方法）。</p>
+<ul>
+<li>ViewStub </li>
+</ul>
+<p>此标签可以使UI在特殊情况下，直观效果类似于设置View的不可见性，但是其更大的意义在于被这个标签所包裹的Views在默认状态下不会占用任何内存空间。ViewStub通过include从外部导入Views元素。<br>用法：通过android:layout来指定所包含的内容。默认情况下，ViewStub所包含的标签都属于visibility=GONE。ViewStub通过方法inflate()来召唤系统加载其内部的Views。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ViewStub</span> <span class="attribute">android:id</span>=<span class="value">"@+id/stub"</span></span><br><span class="line"><span class="attribute">android:inflatedId</span>=<span class="value">"@+id/subTree"</span></span><br><span class="line"><span class="attribute">android:layout</span>=<span class="value">"@layout/mySubTree"</span></span><br><span class="line"><span class="attribute">android:layout_width</span>=<span class="value">"120dip"</span></span><br><span class="line"><span class="attribute">android:layout_height</span>=<span class="value">"40dip"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="handler的使用注意点">handler的使用注意点</h1><hr>
+<p>handle<br>详细请看技术小黑屋：<a href="http://droidyue.com/blog/2014/12/28/in-android-handler-classes-should-be-static-or-leaks-might-occur/?droid_refer=ninki_posts" target="_blank" rel="external">Android中Handler引起的内存泄露</a><br>这里总结几点：<br>1 当一个Android应用启动的时候，会自动创建一个供应用主线程使用的Looper实例。Looper的主要工作就是一个一个处理消息队列中的消息对象。在Android中，所有Android框架的事件（比如Activity的生命周期方法调用和按钮点击等）都是放入到消息中，然后加入到Looper要处理的消息队列中，由Looper负责一条一条地进行处理。主线程中的Looper生命周期和当前应用一样长。</p>
+<p>2 当一个Handler在主线程进行了初始化之后，我们发送一个target为这个Handler的消息到Looper处理的消息队列时，实际上已经发送的消息已经包含了一个Handler实例的引用，只有这样Looper在处理到这条消息时才可以调用Handler#handleMessage(Message)完成消息的正确处理。</p>
+<p>3 在Java中，非静态的内部类和匿名内部类都会隐式地持有其外部类的引用。静态的内部类不会持有外部类的引用。关于这一内容可以查看：<a href="http://droidyue.com/blog/2014/10/02/the-private-modifier-in-java/" target="_blank" rel="external">细话Java：”失效”的private修饰符</a></p>
+<p>要解决这种问题，思路就是不使用非静态内部类，继承Handler时，要么是放在单独的类文件中，要么就是使用静态内部类。因为<strong>静态的内部类不会持有外部类的引用，所以不会导致外部类实例的内存泄露</strong>。当你需要在静态内部类中调用外部的Activity时，我们可以使用弱引用来处理。另外关于同样也需要将Runnable设置为静态的成员属性。注意：一个静态的匿名内部类实例不会持有外部类的引用。 修改后不会导致内存泄露的代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SampleActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span><br><span class="line">   * Instances of static inner classes do not hold an implicit</span><br><span class="line">   * reference to their outer class.</span><br><span class="line">   */</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MyHandler</span> <span class="keyword">extends</span> <span class="title">Handler</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;SampleActivity&gt; mActivity;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyHandler</span><span class="params">(SampleActivity activity)</span> </span>&#123;</span><br><span class="line">      mActivity = <span class="keyword">new</span> WeakReference&lt;SampleActivity&gt;(activity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</span><br><span class="line">      SampleActivity activity = mActivity.get();</span><br><span class="line">      <span class="keyword">if</span> (activity != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> MyHandler mHandler = <span class="keyword">new</span> MyHandler(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span><br><span class="line">   * Instances of anonymous classes do not hold an implicit</span><br><span class="line">   * reference to their outer class when they are "static".</span><br><span class="line">   */</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Runnable sRunnable = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">      <span class="annotation">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Post a message and delay its execution for 10 minutes.</span></span><br><span class="line">    mHandler.postDelayed(sRunnable, <span class="number">1000</span> * <span class="number">60</span> * <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Go back to the previous Activity.</span></span><br><span class="line">    finish();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其实在Android中很多的内存泄露都是由于<strong>在Activity中使用了非静态内部类导致</strong>的，就像本文提到的一样，所以当我们使用时要非静态内部类时要格外注意，如果其实例的持有对象的生命周期大于其外部类对象，那么就有可能导致内存泄露。个人倾向于使用静态类和弱引用的方法解决这种问题。</p>
+<h1 id="使用SparseArray替代HashMap">使用SparseArray替代HashMap</h1><hr>
+<p>这个属于安卓性能优化的范畴，SparseArray是android为这样的Hashmap而专门写的类，目的是提高效率，其核心是折半查找函数（binarySearch）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> start, <span class="keyword">int</span> len, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> high = start + len, low = start - <span class="number">1</span>, guess;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (high - low &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        guess = (high + low) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (a[guess] &lt; key)</span><br><span class="line">            low = guess;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            high = guess;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (high == start + len)</span><br><span class="line">        <span class="keyword">return</span> ~(start + len);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (a[high] == key)</span><br><span class="line">        <span class="keyword">return</span> high;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> ~high;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在Android中，当我们需要定义</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HashMap&lt;Integer, E&gt; hashMap = <span class="keyword">new</span> HashMap&lt;Integer, E&gt;();</span><br></pre></td></tr></table></figure>
+<p>时，我们可以使用如下的方式来取得更好的性能。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SparseArray&lt;E&gt; sparseArray = <span class="keyword">new</span> SparseArray&lt;E&gt;();</span><br></pre></td></tr></table></figure>
+<p>相应的还有SparseBooleanArray和SparseIntArray，分别用来取代键为Integer，值为Boolean以及键和值都为Integer的HashMap。</p>
+<h1 id="安卓资源及访问">安卓资源及访问</h1><hr>
+<p>1 在Java代码中访问资源文件</p>
+<p>R.res_type.xxx 来访问自定义资源文件<br>android.R.res_type.xxx 来访问系统提供的资源文件<br>还可以通过类Resources 来访问资源文件，Resources提供了一个getSystem()静态方法返回本类对象，即可调用getXxx() 类型，返回各个不同类型的值，比如：<br>String appName = Resources.getSystem().getString(R.string.app_name);</p>
+<p>2 在XML文件中访问资源文件</p>
+<p>引用自定义资源 @res_type/xxx 比如：android.text=”@string/hello_world”<br>引用系统资源 @android:res_type/xxx 比如：android.background=”@android:color/green”<br>一般情况下都会按照上面的方式访问资源，但是有一些特殊的：引用主题属性 ?android:attr/xxxx<br>系统自带的资源文件是存放在SDK安装目录android-sdk/platforms/android-xx/data/res_type/xxx下<br>，不同的类型，在不同的文件夹下，比如drawable-xhdpi下有很多资源。</p>
+<h1 id="Character类的digit方法">Character类的digit方法</h1><hr>
+<p>static int digit(char ch, int radix)：根据基数返回当前字符的值的十进制。如果不满足Character.MIN_RADIX &lt;= radix &lt;= Character.MAX_RADIX，或者，ch不是radix基数中的有效值，返回”-1”；如果ch是“大写”的A到Z之间，则返回ch - ‘A’ + 10 的值；如果是“小写”a到z之间，返回ch - ‘a’ + 10 的值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"Character.MIN_RADIX: "</span> + Character.MIN_RADIX );</span><br><span class="line">System.out.println(<span class="string">"Character.MAX_RADIX: "</span> + Character.MAX_RADIX );</span><br><span class="line">System.out.println(<span class="string">"Character.digit('2',2): "</span> + Character.digit(<span class="string">'2'</span>,<span class="number">2</span>) );</span><br><span class="line">System.out.println(<span class="string">"Character.digit('7',10): "</span> + Character.digit(<span class="string">'7'</span>,<span class="number">10</span>) );</span><br><span class="line">System.out.println(<span class="string">"Character.digit('F',16): "</span> + Character.digit(<span class="string">'F'</span>,<span class="number">16</span>) );</span><br><span class="line">结果为：</span><br><span class="line">Character.MIN_RADIX: <span class="number">2</span></span><br><span class="line">Character.MAX_RADIX: <span class="number">36</span></span><br><span class="line">Character.digit(<span class="string">'2'</span>,<span class="number">2</span>): -<span class="number">1</span></span><br><span class="line">Character.digit(<span class="string">'7'</span>,<span class="number">10</span>): <span class="number">7</span></span><br><span class="line">Character.digit(<span class="string">'F'</span>,<span class="number">16</span>): <span class="number">15</span></span><br></pre></td></tr></table></figure>
+<p>一个应用请看这里：<a href="http://jp1017.gitcafe.io/2015/11/04/java%E4%B8%8B16%E8%BF%9B%E5%88%B6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E5%8C%96/" target="_blank" rel="external">java下16进制字符串和字节数组的相互转化</a><br>其逆运算是forDigit:<br>static char forDigit(int digit, int radix) ：根据特定基数判断当前数值表示的字符。4的逆运算，非法数值时返回“’\u0000’”。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"Character.MIN_RADIX: "</span> + Character.MIN_RADIX );</span><br><span class="line">System.out.println(<span class="string">"Character.MAX_RADIX: "</span> + Character.MAX_RADIX );</span><br><span class="line">System.out.println(<span class="string">"Character.forDigit(2,2): "</span> + Character.forDigit(<span class="number">2</span>,<span class="number">2</span>) );</span><br><span class="line">System.out.println(<span class="string">"Character.forDigit(7,10): "</span> + Character.forDigit(<span class="number">7</span>,<span class="number">10</span>) );</span><br><span class="line">System.out.println(<span class="string">"Character.forDigit(15,16): "</span> + Character.forDigit(<span class="number">15</span>,<span class="number">16</span>) );</span><br><span class="line">结果为：</span><br><span class="line">Character.MIN_RADIX: <span class="number">2</span></span><br><span class="line">Character.MAX_RADIX: <span class="number">36</span></span><br><span class="line">Character.forDigit(<span class="number">2</span>,<span class="number">2</span>):</span><br><span class="line">Character.forDigit(<span class="number">7</span>,<span class="number">10</span>): <span class="number">7</span></span><br><span class="line">Character.forDigit(<span class="number">15</span>,<span class="number">16</span>): f</span><br></pre></td></tr></table></figure>
+<h1 id="65536方法数异常">65536方法数异常</h1><hr>
+<p>请参考博文：安卓错误：<a href="http://jp1017.gitcafe.io/2015/11/10/%E5%AE%89%E5%8D%93%E9%94%99%E8%AF%AF%EF%BC%9ADexIndexOverflowException-method-ID-not-in-0-0xffff-65536/" target="_blank" rel="external">DexIndexOverflowException:method ID not in [0,0xffff]:65536</a></p>
+<h1 id="service使用注意点">service使用注意点</h1><hr>
+<h1 id="java定时器举例">java定时器举例</h1><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//倒计时30s操作</span></span><br><span class="line"><span class="keyword">new</span> CountDownTimer(<span class="number">30000</span>, <span class="number">100</span>) &#123;</span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTick</span><span class="params">(<span class="keyword">long</span> millisUntilFinished)</span> </span>&#123;</span><br><span class="line">        btnTraceDate.setText(<span class="string">"seconds remaining: "</span></span><br><span class="line">                + millisUntilFinished / <span class="number">1000</span> + <span class="string">" S "</span> + millisUntilFinished % <span class="number">1000</span> / <span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFinish</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        btnTraceDate.setText(<span class="string">"Done"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;.start();</span><br></pre></td></tr></table></figure>
+<h1 id="内存优化">内存优化</h1><hr>
+<p>通常情况下我们所说的内存是指手机的RAM，它包括以下几部分：<br>1 寄存器：寄存器处于CPU内部，在程序中无法控制；</p>
+<p>2 栈：存放基本数据类型和对象的引用；</p>
+<p>3 堆：存放对象和数组，由虚拟机GC来管理；</p>
+<p>4 静态存储区域(static field)：在固定的位置存放应用程序运行时一直存在的数据，Java在内存中专门划分了一个静态存储区域来管理一些特殊的数据变量，如静态的数据变量；View一般不要设置为static</p>
+<p>5 常量池(constant pool)：虚拟机必须为每个被装在的类维护一个常量池，常量池就是这个类所用的常量的一个有序集合，包括直接常量（基本类型、string）和对其他类型、字段和方法的符号引用。</p>
+<h1 id="getResources()-getColor()_is_deprecated">getResources().getColor() is deprecated</h1><hr>
+<p>用23的api，会有此警告，处女座的朋友看着不爽，那么找一个替换下咯，推荐用这个：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ContextCompat.getColor(context, R.color.color_name)</span><br></pre></td></tr></table></figure>
+<p>ContextCompat是v4包里的，请放心使用，另外还有<code>getDrawable()等方法</code>。</p>
+<h1 id="SharedPreference-Editor的apply和commit方法异同">SharedPreference.Editor的apply和commit方法异同</h1><ol>
+<li><p>apply没有返回值，而commit返回boolean，true表明修改提交成功。</p>
+</li>
+<li><p>apply是将修改数据原子提交到内存, 后面再调用apply函数，数据将会直接覆盖前面的内存数据，然后异步提交到硬件磁盘,这样从一定程度上提高了很多效率；而commit是同步的提交到硬件磁盘，因此，在多个并发的提交commit的时候，他们会等待正在处理的commit保存到磁盘后再操作下一个数据，从而降低了效率。</p>
+</li>
+<li><p>apply方法不会提示任何失败的提示。<br>由于在一个进程中，sharedPreference是单实例，一般不会出现并发冲突，如果对提交的结果不关心的话，建议使用apply，当然需要确保提交成功且有后续操作的话，还是需要用commit的。</p>
+</li>
+</ol>
+<h1 id="Snackbar">Snackbar</h1><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Snackbar.make(getWindow().getDecorView(), <span class="string">"Hi, Snack!"</span>, Snackbar.LENGTH_SHORT).show();</span><br></pre></td></tr></table></figure>
+<h1 id="安卓事件">安卓事件</h1><hr>
+<p>先来个文章：<br><a href="http://hunankeda110.iteye.com/blog/1944311" target="_blank" rel="external">Android触摸事件分发机制</a></p>
+<p>分为<code>事件传递</code>和<code>事件处理</code></p>
+<ul>
+<li><p>事件传递：MotionEvent事件的传递是采用隧道方式传递。隧道方式，即从根元素依次往下传递直到最内层子元素或在中间某一元素中由于某一条件停止传递。</p>
+</li>
+<li><p>事件处理：MotionEvent事件的处理采用冒泡方式。冒泡方式，从最内层子元素依次往外传递直到根元素或在中间某一元素中由于某一条件停止传递。</p>
+</li>
+</ul>
+<p>Android中onclick，onLongClick是都是由ACTION_DOWN，ACTION_UP组成。如果在同一个View中onTouchEvent、onclick、onLongClick都进行了重写。onTouchEvent最先捕获ACTION_DOWN、ACTION_UP等单元事件。接下来才可能发生onClick、onLongClick事件。一个onclick事件是由ACTION_DOWN和ACTION_UP组成的。一个onLongClick事件至少有一个ACTION_DOWN。</p>
+<p>onLongClick是在单独的线程执行，发生在ACTION_UP之前。Onclick发生在ACTION_UP之后，也就是说，如果在onLongClick返回false，onclick就会发生，而onlongClick返回true，则代表此事件已经被消费。Onclick不再发生。</p>
+<p>分享是一种美德，更是一种生活方式！！</p>
+<blockquote>
+<p>也许你会说我是一个梦想者，但我不是唯一的一个。</p>
+<p>悦分享，越快乐^_^</p>
+</blockquote>
+<p>欢迎交流，转载请注明出处，谢谢！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文標題:</span><a href="/2015/11/25/Android-开发知识点总结-长期更新/">Android 开发知识点总结(长期更新)</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主頁">安卓开发</a></p>
+        <p><span>發布時間:</span>2015-11-25, 18:38:28</p>
+        <p><span>最後更新:</span>2016-05-13, 09:36:26</p>
+        <p>
+            <span>原始鏈接:</span><a class="post-url" href="/2015/11/25/Android-开发知识点总结-长期更新/" title="Android 开发知识点总结(长期更新)">http://jp1017.github.io/2015/11/25/Android-开发知识点总结-长期更新/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://jp1017.github.io/2015/11/25/Android-开发知识点总结-长期更新/　　作者: 安卓开发" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>許可協議:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"姓名標示-非商業性-相同方式分享 4.0 國際"</a> 轉載請保留原文鏈接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2015/12/09/Android-读取txt文件并以utf-8格式转换成字符串/">
+                    Android 读取txt文件并以utf-8格式转换成字符串
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2015/11/25/Markdown嵌入视频/">
+                    Markdown嵌入视频
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mipmap目录和drawable目录区别"><span class="toc-number">1.</span> <span class="toc-text">mipmap目录和drawable目录区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#屏幕尺寸与分辨率"><span class="toc-number">2.</span> <span class="toc-text">屏幕尺寸与分辨率</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#获取SHA1和MD5值"><span class="toc-number">3.</span> <span class="toc-text">获取SHA1和MD5值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#setEnabled"><span class="toc-number">4.</span> <span class="toc-text">setEnabled</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#setFocusable"><span class="toc-number">4.1.</span> <span class="toc-text">setFocusable</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#onAttachedToWindow()"><span class="toc-number">5.</span> <span class="toc-text">onAttachedToWindow()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#padding"><span class="toc-number">6.</span> <span class="toc-text">padding</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用dp和sp"><span class="toc-number">7.</span> <span class="toc-text">使用dp和sp</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android_Support包"><span class="toc-number">8.</span> <span class="toc-text">Android Support包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命名"><span class="toc-number">8.0.1.</span> <span class="toc-text">命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v4_Support_Library"><span class="toc-number">8.0.2.</span> <span class="toc-text">v4 Support Library</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v7_Support_Libraries"><span class="toc-number">8.0.3.</span> <span class="toc-text">v7 Support Libraries</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v13_Support_Library"><span class="toc-number">8.0.4.</span> <span class="toc-text">v13 Support Library</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v17_Preference_Support_Library_for_TV"><span class="toc-number">8.0.5.</span> <span class="toc-text">v17 Preference Support Library for TV</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#assets和res"><span class="toc-number">9.</span> <span class="toc-text">assets和res</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android属性allowBackup"><span class="toc-number">10.</span> <span class="toc-text">Android属性allowBackup</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include_merge_ViewStub在布局中的使用"><span class="toc-number">11.</span> <span class="toc-text">include merge ViewStub在布局中的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#handler的使用注意点"><span class="toc-number">12.</span> <span class="toc-text">handler的使用注意点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用SparseArray替代HashMap"><span class="toc-number">13.</span> <span class="toc-text">使用SparseArray替代HashMap</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安卓资源及访问"><span class="toc-number">14.</span> <span class="toc-text">安卓资源及访问</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Character类的digit方法"><span class="toc-number">15.</span> <span class="toc-text">Character类的digit方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#65536方法数异常"><span class="toc-number">16.</span> <span class="toc-text">65536方法数异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#service使用注意点"><span class="toc-number">17.</span> <span class="toc-text">service使用注意点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#java定时器举例"><span class="toc-number">18.</span> <span class="toc-text">java定时器举例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内存优化"><span class="toc-number">19.</span> <span class="toc-text">内存优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#getResources()-getColor()_is_deprecated"><span class="toc-number">20.</span> <span class="toc-text">getResources().getColor() is deprecated</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SharedPreference-Editor的apply和commit方法异同"><span class="toc-number">21.</span> <span class="toc-text">SharedPreference.Editor的apply和commit方法异同</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Snackbar"><span class="toc-number">22.</span> <span class="toc-text">Snackbar</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安卓事件"><span class="toc-number">23.</span> <span class="toc-text">安卓事件</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隱藏目錄"  title="點擊按鈕隱藏或者顯示文章目錄">
+<script>
+    var valueHide = "隱藏目錄";
+    var valueShow = "顯示目錄";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Android 开发知识点总结(长期更新)　| 安卓那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2015/11/25/Android-开发知识点总结-长期更新/" data-title="Android 开发知识点总结(长期更新)" data-url="http://jp1017.github.io/2015/11/25/Android-开发知识点总结-长期更新/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        
+        <!--ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';-->
+        <!-- 自定义添加浏览器和系统标识 -->
+        ds.src = 'https://jp1017.github.io/js/embed.js';
+        
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/12/09/Android-读取txt文件并以utf-8格式转换成字符串/" title="上一篇: Android 读取txt文件并以utf-8格式转换成字符串">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2015/11/25/Markdown嵌入视频/" title="下一篇: Markdown嵌入视频">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/07/反编译某软件直接进入微信二维码扫描界面/">反编译某软件直接进入微信二维码扫描界面</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/31/Android-Studio-使用技巧之打造优雅的-Logcat-Console/">Android Studio 使用技巧之打造优雅的 Logcat Console</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/08/加速-gradle-编译之屏蔽部分-Task/">加速 gradle 编译之屏蔽部分 Task</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/25/微信热修复tinker及tinker-server快速接入/">微信热修复tinker及tinker server快速接入</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/11/安卓数据库-greenDAO3-使用之二数据库升级/">安卓数据库 greenDAO3 使用之二数据库升级</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/11/安卓数据库-greenDAO3-使用之一项目配置及增删改查/">安卓数据库 greenDAO3 使用之一项目配置及增删改查</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/11/删除-Ubuntu-系统旧内核/">删除 Ubuntu 系统旧内核</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/25/安卓应用修改系统时间/">安卓应用修改系统时间</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/15/USB摄像头预览识别二维码/">USB摄像头预览识别二维码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/28/安卓开发之屏蔽按键抖动，连击，长按事件/">安卓开发之屏蔽按键抖动，连击，长按事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/28/ViewPager-嵌套百度地图事件冲突的解决方法/">ViewPager 嵌套百度地图事件冲突的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/11/Android-Studio-引用系统-jar-包的正确姿势/">Android Studio 引用系统 jar 包的正确姿势</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/30/jni-开发错误之-java-lang-UnsatisfiedLinkError-dlopen-failed-cannot-locate-symbol-tcgetattr-referenced-by-libserial-port-so/">jni 开发错误之 java.lang.UnsatisfiedLinkError: dlopen failed: cannot locate symbol tcgetattr referenced by libserial_port.so...</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/22/Android-Studio-clean-时产生-Error-Execution-failed-for-task-app-mockableAndroidJar java.lang.NullPointerException (no error message)/">Android Studio clean 时产生 Error:Execution failed for task ':app:mockableAndroidJar' > java.lang.NullPointerException (no error message) </a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/17/工作两年的所思所想所感/">工作两年的所思所想所感</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/31/EventBus3-简单使用及注意点/">EventBus3 简单使用及注意点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/23/安卓定位及坐标转换/">安卓定位及坐标转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/25/ubuntu-下常用软件及主题推荐/">ubuntu 下常用软件及主题推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/java-基本数据类型及数组使用集合/">java 基本数据类型及数组使用集锦</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/手把手教你利用-Travis-CI-把-Android-项目部署到-github/">手把手教你利用 Travis CI 把 Android 项目部署到 GitHub</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/05/Android-Studio-使用之文件模板/">Android Studio 使用之文件模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/01/Android-Studio-开发错误-Installation-failed-with-message-INSTALL-FAILED-SHARED-USER-INCOMPATIBLE/">Android Studio 开发错误 Installation failed with message INSTALL_FAILED_SHARED_USER_INCOMPATIBLE</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/安卓-jni-开发之-native-方法的动态注册/">安卓 jni 开发之 native 方法的动态注册</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/安卓程序中调用-linux-命令/">安卓程序中调用 linux 命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/22/安卓-jni-开发错误-UnsatisfiedLinkError-Native-method-not-found/">安卓 jni 开发错误 UnsatisfiedLinkError: Native method not found</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/22/Android-Studio-配置-gradle-脚本错误-Gradle-DSL-method-not-found-minus/">Android Studio 配置 gradle 脚本错误:Gradle DSL method not found: 'minus()'</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/21/Android Studio 下安卓-jni-开发错误-undefined-reference-to-AndroidBitmap-getInfo/">Android Studio 下安卓 jni 开发错误 undefined reference to AndroidBitmap_getInfo</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/安卓 jni 开发 —— Android Studio 打包 so 的坑/">安卓 jni 开发 —— Android Studio 打包 so 的坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/Android Studio 下安卓-jni-开发错误-undefined-reference-to-android-log-print/">Android Studio 下安卓 jni 开发错误 undefined reference to __android_log_print</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/安卓开发问题之Unable-to-instantiate-application-com-android-tools-fd-runtime-BootstrapApplication/">安卓开发问题之Unable to instantiate application com.android.tools.fd.runtime.BootstrapApplication</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/由安卓开发中的一个坑引发的问题解决之道浅析/">由安卓开发中的一个坑引发的问题解决之道浅析</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/无住生心/">无住生心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/安卓-Bitmap-高效加载/">安卓 Bitmap 高效加载</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/获取安卓应用的包名和入口-Activity/">获取安卓应用的包名和入口 Activity</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/CardView-设置-selector/">CardView 设置 selector</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/ToolBar-修改菜单字体和颜色/">ToolBar 修改菜单字体和颜色</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/ubuntu升级后不能上网的解决方案/">ubuntu升级后不能上网的解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/android-colorPrimary-requires-API-level-21-current-min-is-14/">android:colorPrimary requires API level 21 (current min is 14)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/30/我的2015，我来总个小结/">我的2015，我来总个小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Android-Studio-多渠道打包及-gradlew-命令的基本使用/">Android Studio 多渠道打包、自动版本号及 gradlew 命令的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/常用工具资源分类/">常用工具资源分类</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/2015上海马拉松线上跑感悟-人生如同一场马拉松/">2015上海马拉松线上跑感悟-人生如同一场马拉松</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/三伏天，我想和这个世界谈谈/">三伏天，我想和这个世界谈谈</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/传统文化和第八识/">传统文化和第八识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/聊聊老罗锤子便签里的Markdown/">聊聊老罗锤子便签里的Markdown</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/由收花生所想到的/">由收花生所想到的</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-api23中删除HttpClient的相关类的解决方法/">Android api23中删除HttpClient的相关类的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/jdk1-8新特性之lambda表达式及在Android-Studio中的使用/">jdk1.8新特性之lambda表达式及在Android Studio中的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/java中String和InputStream的转换/">java中String和InputStream的转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/像生活一样跑步，像跑步一样生活/">像生活一样跑步，像跑步一样生活</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/android系统里的倒计时工具CountDownTimer无法cancle的解决方法/">Android系统里的倒计时工具CountDownTimer无法cancle的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之七——Android-Studio下git的正确使用/">git使用之七——Android Studio下git的正确使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之六——github协同工作的Fork-Pull-Request/">git使用之六——github协同工作的Fork+Pull Request</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之五——Github上fork项目后与原项目保持同步/">git使用之五——Github上fork项目后与原项目保持同步</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之四——windows下github桌面版的安装/">git使用之四——windows下github桌面版的安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之三——-git文件夹详解/">git使用之三——.git文件夹详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之二——-gitignore文件详解/">git使用之二——.gitignore文件详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之一——git的基本使用/">git使用之一——git的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/安卓注解那些事儿/">安卓注解那些事儿</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-Studio下添加引用jar文件和so文件/">Android Studio下添加引用jar文件和so文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-Studio-插件之内存泄露检测LeakCanary使用/">Android Studio 插件之内存泄露检测LeakCanary使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/安卓百度地图开发so文件引用失败问题研究/">安卓百度地图开发so文件引用失败问题研究</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-SQLite-ORM框架greenDAO在Android-Studio中的配置与使用/">Android SQLite ORM框架greenDAO在Android Studio中的配置与使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-Studio中常用插件及浅释/">Android Studio中常用插件及浅释</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-Studio下载、使用技巧及快捷键汇总/">Android Studio下载、使用技巧及快捷键汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/18/Activity-A-调用Activity-B-里的方法探索/">Activity A 调用Activity B 里的方法探索</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/18/Android混淆那些事儿/">Android混淆那些事儿</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/09/Android-读取txt文件并以utf-8格式转换成字符串/">Android 读取txt文件并以utf-8格式转换成字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/25/Android-开发知识点总结-长期更新/">Android 开发知识点总结(长期更新)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/25/Markdown嵌入视频/">Markdown嵌入视频</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/25/java下16进制字符串和字节数组的相互转化/">java下16进制字符串和字节数组的相互转化</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/23/ubuntu15-10升级时校验和不符的解决方法/">ubuntu15.10升级时校验和不符的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/ubuntu下运行genymotion-error-while-loading-shared-libraries-libgstapp-0-10-so-0-cannot-open-shared/">ubuntu下运行genymotion: error while loading shared libraries: libgstapp-0.10.so.0: cannot open shared</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/2015上海马拉松线上跑感悟-人生如同一场马拉松/">2015上海马拉松线上跑感悟-人生如同一场马拉松</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/17/Android-Studio美化之优雅的logcat/">Android Studio美化之优雅的logcat</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 安卓开发
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、簡單且強大的網誌框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="簡而不減 Hexo 雙欄網誌主題  v3.0">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到訪數: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本頁閱讀量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+  <a href="https://github.com/jp1017"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
+</body>
+</html>

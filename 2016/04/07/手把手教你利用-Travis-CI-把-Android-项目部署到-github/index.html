@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+  <meta charset="utf-8">
+  
+  <title>手把手教你利用 Travis CI 把 Android 项目部署到 GitHub | 安卓那些事儿</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="博客：    安卓之家微博：    追风917CSDN：    蒋朋的家简书：    追风917
+
+
+
+本文不涉及 CI 是什么以及优势等，不知道的还请自行 google，这里会手把手教你如何操作。
+闲话少说，开始吧。
+一共三步：
+
+开启 Travis CI
+编写 部署文件 .travis.yml
+部署到 GitHub
+
+这里会教你如何操作以及如何解决遇到的问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手把手教你利用 Travis CI 把 Android 项目部署到 GitHub">
+<meta property="og:url" content="http://jp1017.github.io/2016/04/07/手把手教你利用-Travis-CI-把-Android-项目部署到-github/index.html">
+<meta property="og:site_name" content="安卓那些事儿">
+<meta property="og:description" content="博客：    安卓之家微博：    追风917CSDN：    蒋朋的家简书：    追风917
+
+
+
+本文不涉及 CI 是什么以及优势等，不知道的还请自行 google，这里会手把手教你如何操作。
+闲话少说，开始吧。
+一共三步：
+
+开启 Travis CI
+编写 部署文件 .travis.yml
+部署到 GitHub
+
+这里会教你如何操作以及如何解决遇到的问题">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/20160407213750.jpg">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/20160407204911.jpg">
+<meta property="og:updated_time" content="2016-09-16T03:57:00.134Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="手把手教你利用 Travis CI 把 Android 项目部署到 GitHub">
+<meta name="twitter:description" content="博客：    安卓之家微博：    追风917CSDN：    蒋朋的家简书：    追风917
+
+
+
+本文不涉及 CI 是什么以及优势等，不知道的还请自行 google，这里会手把手教你如何操作。
+闲话少说，开始吧。
+一共三步：
+
+开启 Travis CI
+编写 部署文件 .travis.yml
+部署到 GitHub
+
+这里会教你如何操作以及如何解决遇到的问题">
+  
+    <link rel="alternative" href="/atom.xml" title="安卓那些事儿" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xlah4.com1.z0.glb.clouddn.com/favicon.png">
+  
+  
+      <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+  
+  
+      <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+      <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+          fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+          scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+          search: undefined
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+      </script>
+  
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="http://7xlah4.com1.z0.glb.clouddn.com/ferrari.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">安卓开发</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">思想的流浪者</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜單</li>
+                        <li>標籤</li>
+                        
+                        <li>友情鏈接</li>
+                        
+                        
+                        <li>關於我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/jp1017" title="GitHub"></a>
+                            
+                                <a class="fa Email" target="_blank" href="/jp19891017@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1321395433/profile?topnav=1&wvr=6" title="新浪微博"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" title="简书"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Activity/">Activity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Annotation/">Annotation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bitmap/">Bitmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI/">CI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CardView/">CardView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CountDownTimer/">CountDownTimer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EventBus3/">EventBus3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HttpClient/">HttpClient</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/InputStream/">InputStream</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeakCanary/">LeakCanary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ToolBar/">ToolBar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USB摄像头/">USB摄像头</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ViewPager/">ViewPager</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genymotion/">genymotion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitignore/">gitignore</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gradle/">gradle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gradlew/">gradlew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/greenDAO/">greenDAO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar/">jar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jni/">jni</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logcat/">logcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tinker/">tinker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件/">事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件分发/">事件分发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二维码/">二维码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/年终总结/">年终总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信/">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/扫一扫/">扫一扫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/混淆/">混淆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图/">百度地图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/系统时间/">系统时间</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跑步/">跑步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于安卓开发</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">安卓开发</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="http://7xlah4.com1.z0.glb.clouddn.com/ferrari.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">安卓开发</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">思想的流浪者</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/jp1017" title="GitHub"></a>
+                            
+                                <a class="fa Email" target="_blank" href="/jp19891017@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1321395433/profile?topnav=1&wvr=6" title="新浪微博"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" title="简书"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
+</nav>
+      <div class="body-wrap"><article id="post-手把手教你利用-Travis-CI-把-Android-项目部署到-github" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/07/手把手教你利用-Travis-CI-把-Android-项目部署到-github/" class="article-date">
+      <time datetime="2016-04-07T12:17:45.000Z" itemprop="datePublished">2016-04-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      手把手教你利用 Travis CI 把 Android 项目部署到 GitHub
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CI/">CI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/20160407213750.jpg" alt="每日一景"></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=28815250&auto=1&height=66"></iframe>
+
+<p>本文不涉及 <code>CI</code> 是什么以及优势等，不知道的还请自行 google，这里会手把手教你如何操作。</p>
+<p>闲话少说，开始吧。</p>
+<p>一共三步：</p>
+<ol>
+<li>开启 <code>Travis CI</code></li>
+<li>编写 部署文件 <code>.travis.yml</code></li>
+<li>部署到 <code>GitHub</code></li>
+</ol>
+<p>这里会教你如何操作以及如何解决遇到的问题</p>
+<a id="more"></a>
+<h1 id="开启_Travis_CI">开启 <code>Travis CI</code></h1><hr>
+<p>首先登录 <a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a>，没有登录的话，用 github 授权登录即可，登录后，点击右上角你的账户，会同步你 GitHub 仓库，把你要进行 CI 的仓库打开即可：</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/20160407204911.jpg" alt="rep"></p>
+<h1 id="部署文件_-travis-yml">部署文件 <code>.travis.yml</code></h1><hr>
+<p>我是在 <code>android studio</code> 下操作的，所以直接新建一个文件，重命名为 .travis.yml 即可，这是一个 yml 文件，有一些需要知道的语法，很简单的几个，自行 google</p>
+<p>最基本的写法如下：</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">language: android  </span><br><span class="line">android:</span><br><span class="line">  components:</span><br><span class="line">    -<span class="ruby"> tools</span><br><span class="line"></span>    -<span class="ruby"> build-tools-<span class="number">23.0</span>.<span class="number">2</span></span><br><span class="line"></span>    -<span class="ruby"> android-<span class="number">23</span></span><br><span class="line"></span>    -<span class="ruby"> extra-android-m2repository</span><br><span class="line"></span>    -<span class="ruby"> extra-android-support</span><br><span class="line"></span></span><br><span class="line">before_install:</span><br><span class="line">  -<span class="ruby"> chmod +x gradlew</span><br><span class="line"></span>  </span><br><span class="line">script:  </span><br><span class="line">  -<span class="ruby"> ./gradlew assembleRelease</span></span><br></pre></td></tr></table></figure>
+<p>上面的内容还是很好理解的，有几个 tag：android 语言、用到的一些组件、增加 gradlew 脚本可执行权限及运行该脚本<br>该文件的详细说面，这里有详细介绍：<a href="https://docs.travis-ci.com/user/languages/android" target="_blank" rel="external">Building an Android Project</a></p>
+<p>编写好后，commit push 即可完成基本 CI。</p>
+<h1 id="部署到_GitHub">部署到 GitHub</h1><hr>
+<p>我们的目的是部署到 GitHub，方便我们使用，那么还需要下面的一些操作。</p>
+<p>由于 travis 是 ruby 编写，需要下载 ruby 并安装 travis，ruby 下载链接：<a href="https://www.ruby-lang.org/zh_cn/downloads/" target="_blank" rel="external">https://www.ruby-lang.org/zh_cn/downloads/</a></p>
+<p>然后在你的终端运行命令：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">gem</span> install travis -v <span class="number">1</span>.<span class="number">8</span>.<span class="number">2</span> --<span class="built_in">no</span>-rdoc --<span class="built_in">no</span>-ri</span><br></pre></td></tr></table></figure>
+<p>此处可能会有问题，首先 windows 用户提示 gem 不是系统命令等错误，这个配置下环境变量，把ruby/bin目录加入环境变量即可。</p>
+<p>还可能遇到这个问题：<a href="Errno::ECONNRESET: An existing connection was forcibly closed by the remote host" target="_blank" rel="external">connection was forcibly closed by the remote host</a>，这个就是 gem 仓库访问不到，也就是你需要翻墙，而大部分翻墙也不好使，这就需要添加国内的 gem 源，这里有两个：</p>
+<p><a href="https://ruby.taobao.org/" target="_blank" rel="external">RubyGems 镜像 - 淘宝</a><br><a href="https://gems.ruby-china.org/" target="_blank" rel="external">RubyGems 镜像- Ruby China</a></p>
+<p>使用方法里面也有说明，以淘宝为例：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ gem sources --<span class="built_in">add</span> http<span class="variable">s:</span>//<span class="keyword">ruby</span>.taobao.org/ --<span class="built_in">remove</span> http<span class="variable">s:</span>//rubygems.org/</span><br><span class="line">$ gem sources -<span class="keyword">l</span></span><br><span class="line">*** CURRENT SOURCES ***</span><br><span class="line"></span><br><span class="line">http<span class="variable">s:</span>//<span class="keyword">ruby</span>.taobao.org</span><br><span class="line"># 请确保只有 <span class="keyword">ruby</span>.taobao.org</span><br></pre></td></tr></table></figure>
+<p>此处可能会遇到证书错误：<a href="https://ruby-china.org/topics/29323" target="_blank" rel="external">gem install SSL 错误</a></p>
+<p>里面说了很多，其实解决方法就是找到证书，配置下就好了.</p>
+<p><a href="https://github.com/ruby-china/rubygems-mirror/wiki" target="_blank" rel="external">关于 Windows 下证书无法验证问题 (certificate verify failed)</a></p>
+<p>ubuntu　下遇到证书错误需要重新刷新下证书：</p>
+<blockquote>
+<p>sudo update-ca-certificates –fresh</p>
+</blockquote>
+<p>2016.09.16　ubuntu安装时遇到错误：</p>
+<blockquote>
+<p>can’t find header files for ruby at /usr/lib/ruby/include/ruby.h</p>
+</blockquote>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> sudo gem install travis -v 1.8.2 --<span class="keyword">no</span>-rdoc --<span class="keyword">no</span>-ri</span><br><span class="line"></span><br><span class="line">Building native extensions.  This could take a <span class="keyword">while</span>...</span><br><span class="line"><span class="keyword">ERROR</span>:  <span class="keyword">Error</span> installing travis:</span><br><span class="line">	<span class="keyword">ERROR</span>: Failed to build gem native extension.</span><br><span class="line"></span><br><span class="line">    current directory: /<span class="keyword">var</span>/lib/gems/2.3.0/gems/ffi-1.9.14/ext/ffi_c</span><br><span class="line">/usr/bin/ruby2.3 -r ./siteconf20160916-2426-1ewzf6n.rb extconf.rb</span><br><span class="line">mkmf.rb can't find header files <span class="keyword">for</span> ruby at /usr/lib/ruby/<span class="keyword">include</span>/ruby.<span class="literal">h</span></span><br><span class="line"></span><br><span class="line">extconf failed, <span class="keyword">exit</span> code 1</span><br><span class="line"></span><br><span class="line">Gem files will remain installed <span class="keyword">in</span> /<span class="keyword">var</span>/lib/gems/2.3.0/gems/ffi-1.9.14 <span class="keyword">for</span> inspection.</span><br><span class="line">Results logged to /<span class="keyword">var</span>/lib/gems/2.3.0/extensions/x86_64-linux/2.3.0/ffi-1.9.14/gem_make.<span class="keyword">out</span></span><br></pre></td></tr></table></figure>
+<p>解决办法：<a href="https://github.com/jasmine/jasmine/issues/755#issue-54955239" target="_blank" rel="external">https://github.com/jasmine/jasmine/issues/755#issue-54955239</a><br>需要安装　<code>ruby-dev</code></p>
+<blockquote>
+<p>apt-get install gcc ruby ruby-dev libxml2 libxml2-dev libxslt1-dev</p>
+</blockquote>
+<p>好了，这样在安装 travis 就可以了</p>
+<p>安装好后就可以部署到 GitHub：<br>首先登录：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">travis login <span class="comment">--auto</span></span><br></pre></td></tr></table></figure>
+<p><strong>重要提醒</strong>：这条命令在windows下使用cmd，在输入密码时都显示明文密码，并且回车后无响应，我留下了这个：</p>
+<p><a href="https://github.com/nukc/how-to-use-travis-ci/issues/1" target="_blank" rel="external">can’t travis login</a><br><a href="https://github.com/travis-ci/travis.rb/issues/390" target="_blank" rel="external">can’t travis login</a></p>
+<p>我是开启了 bash，在里面操作成功，遇到同样问题的朋友请更换操作系统或开启bash。</p>
+<p>然后部署：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">travis</span> setup releases</span><br></pre></td></tr></table></figure>
+<p>会提示输入用户名，密码，文件名等，完成后就搞定了。</p>
+<p>最后就是提交push代码到GitHub了，push后就可以看到 travis 网站上对应的项目开始集成。<br>错误在所难免，细心点，用力点，都会解决了。</p>
+<p>详细安装说明在这里:<a href="https://github.com/travis-ci/travis.rb#installation" target="_blank" rel="external">https://github.com/travis-ci/travis.rb#installation</a></p>
+<p>这样就可以使用了，当然如果你喜欢，还可以发布到fir.im</p>
+<h1 id="自动发布APK到fir-im">自动发布APK到fir.im</h1><hr>
+<p>很简单，添加几行就可以：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">before_install:</span><br><span class="line">- gem <span class="operator"><span class="keyword">install</span> fir-cli</span><br><span class="line">after_deploy:</span><br><span class="line">- fir <span class="keyword">p</span> app/<span class="keyword">build</span>/outputs/apk/app-<span class="keyword">release</span>.apk -<span class="keyword">T</span> $FIR_TOKEN -<span class="keyword">c</span> <span class="string">"`git cat-file tag $TRAVIS_TAG`"</span></span></span><br></pre></td></tr></table></figure>
+<p>即在环境构建阶段安装fir-cli，在发布成功后通过fir命令行工具将apk上传到fir。</p>
+<p>其中$FIR_TOKEN可以在fir.im的用户-&gt;API Token中找到，然后在Travis CI控制台中创建环境变量FIR_TOKEN并粘贴即可。</p>
+<p>git cat-file tag $TRAVIS_TAG将当前发布tag所包含的附加信息一同上传，方便参看附加信息；$TRAVIS_TAG变量是Travis CI每次运行自动附带的环境变量</p>
+<p>安卓开源库收集整理中，欢迎 PR， star，地址：<a href="https://github.com/XXApple/AndroidLibs" target="_blank" rel="external">https://github.com/XXApple/AndroidLibs</a></p>
+<p>分享是一种美德，更是一种生活方式！！</p>
+<blockquote>
+<p>也许你会说我是一个梦想者，但我不是唯一的一个。</p>
+<p>悦分享，越快乐^_^</p>
+</blockquote>
+<p>欢迎交流，转载请注明出处，谢谢！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文標題:</span><a href="/2016/04/07/手把手教你利用-Travis-CI-把-Android-项目部署到-github/">手把手教你利用 Travis CI 把 Android 项目部署到 GitHub</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主頁">安卓开发</a></p>
+        <p><span>發布時間:</span>2016-04-07, 20:17:45</p>
+        <p><span>最後更新:</span>2016-09-16, 11:57:00</p>
+        <p>
+            <span>原始鏈接:</span><a class="post-url" href="/2016/04/07/手把手教你利用-Travis-CI-把-Android-项目部署到-github/" title="手把手教你利用 Travis CI 把 Android 项目部署到 GitHub">http://jp1017.github.io/2016/04/07/手把手教你利用-Travis-CI-把-Android-项目部署到-github/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://jp1017.github.io/2016/04/07/手把手教你利用-Travis-CI-把-Android-项目部署到-github/　　作者: 安卓开发" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>許可協議:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"姓名標示-非商業性-相同方式分享 4.0 國際"</a> 轉載請保留原文鏈接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/04/13/java-基本数据类型及数组使用集合/">
+                    java 基本数据类型及数组使用集锦
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/04/05/Android-Studio-使用之文件模板/">
+                    Android Studio 使用之文件模板
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#开启_Travis_CI"><span class="toc-number">1.</span> <span class="toc-text">开启 Travis CI</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署文件_-travis-yml"><span class="toc-number">2.</span> <span class="toc-text">部署文件 .travis.yml</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署到_GitHub"><span class="toc-number">3.</span> <span class="toc-text">部署到 GitHub</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自动发布APK到fir-im"><span class="toc-number">4.</span> <span class="toc-text">自动发布APK到fir.im</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隱藏目錄"  title="點擊按鈕隱藏或者顯示文章目錄">
+<script>
+    var valueHide = "隱藏目錄";
+    var valueShow = "顯示目錄";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"手把手教你利用 Travis CI 把 Android 项目部署到 GitHub　| 安卓那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/04/07/手把手教你利用-Travis-CI-把-Android-项目部署到-github/" data-title="手把手教你利用 Travis CI 把 Android 项目部署到 GitHub" data-url="http://jp1017.github.io/2016/04/07/手把手教你利用-Travis-CI-把-Android-项目部署到-github/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        
+        <!--ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';-->
+        <!-- 自定义添加浏览器和系统标识 -->
+        ds.src = 'https://jp1017.github.io/js/embed.js';
+        
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/04/13/java-基本数据类型及数组使用集合/" title="上一篇: java 基本数据类型及数组使用集锦">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/04/05/Android-Studio-使用之文件模板/" title="下一篇: Android Studio 使用之文件模板">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/07/反编译某软件直接进入微信二维码扫描界面/">反编译某软件直接进入微信二维码扫描界面</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/31/Android-Studio-使用技巧之打造优雅的-Logcat-Console/">Android Studio 使用技巧之打造优雅的 Logcat Console</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/08/加速-gradle-编译之屏蔽部分-Task/">加速 gradle 编译之屏蔽部分 Task</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/25/微信热修复tinker及tinker-server快速接入/">微信热修复tinker及tinker server快速接入</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/11/安卓数据库-greenDAO3-使用之二数据库升级/">安卓数据库 greenDAO3 使用之二数据库升级</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/11/安卓数据库-greenDAO3-使用之一项目配置及增删改查/">安卓数据库 greenDAO3 使用之一项目配置及增删改查</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/11/删除-Ubuntu-系统旧内核/">删除 Ubuntu 系统旧内核</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/25/安卓应用修改系统时间/">安卓应用修改系统时间</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/15/USB摄像头预览识别二维码/">USB摄像头预览识别二维码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/28/安卓开发之屏蔽按键抖动，连击，长按事件/">安卓开发之屏蔽按键抖动，连击，长按事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/28/ViewPager-嵌套百度地图事件冲突的解决方法/">ViewPager 嵌套百度地图事件冲突的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/11/Android-Studio-引用系统-jar-包的正确姿势/">Android Studio 引用系统 jar 包的正确姿势</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/30/jni-开发错误之-java-lang-UnsatisfiedLinkError-dlopen-failed-cannot-locate-symbol-tcgetattr-referenced-by-libserial-port-so/">jni 开发错误之 java.lang.UnsatisfiedLinkError: dlopen failed: cannot locate symbol tcgetattr referenced by libserial_port.so...</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/22/Android-Studio-clean-时产生-Error-Execution-failed-for-task-app-mockableAndroidJar java.lang.NullPointerException (no error message)/">Android Studio clean 时产生 Error:Execution failed for task ':app:mockableAndroidJar' > java.lang.NullPointerException (no error message) </a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/17/工作两年的所思所想所感/">工作两年的所思所想所感</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/31/EventBus3-简单使用及注意点/">EventBus3 简单使用及注意点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/23/安卓定位及坐标转换/">安卓定位及坐标转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/25/ubuntu-下常用软件及主题推荐/">ubuntu 下常用软件及主题推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/java-基本数据类型及数组使用集合/">java 基本数据类型及数组使用集锦</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/手把手教你利用-Travis-CI-把-Android-项目部署到-github/">手把手教你利用 Travis CI 把 Android 项目部署到 GitHub</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/05/Android-Studio-使用之文件模板/">Android Studio 使用之文件模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/01/Android-Studio-开发错误-Installation-failed-with-message-INSTALL-FAILED-SHARED-USER-INCOMPATIBLE/">Android Studio 开发错误 Installation failed with message INSTALL_FAILED_SHARED_USER_INCOMPATIBLE</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/安卓-jni-开发之-native-方法的动态注册/">安卓 jni 开发之 native 方法的动态注册</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/安卓程序中调用-linux-命令/">安卓程序中调用 linux 命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/22/安卓-jni-开发错误-UnsatisfiedLinkError-Native-method-not-found/">安卓 jni 开发错误 UnsatisfiedLinkError: Native method not found</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/22/Android-Studio-配置-gradle-脚本错误-Gradle-DSL-method-not-found-minus/">Android Studio 配置 gradle 脚本错误:Gradle DSL method not found: 'minus()'</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/21/Android Studio 下安卓-jni-开发错误-undefined-reference-to-AndroidBitmap-getInfo/">Android Studio 下安卓 jni 开发错误 undefined reference to AndroidBitmap_getInfo</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/安卓 jni 开发 —— Android Studio 打包 so 的坑/">安卓 jni 开发 —— Android Studio 打包 so 的坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/Android Studio 下安卓-jni-开发错误-undefined-reference-to-android-log-print/">Android Studio 下安卓 jni 开发错误 undefined reference to __android_log_print</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/安卓开发问题之Unable-to-instantiate-application-com-android-tools-fd-runtime-BootstrapApplication/">安卓开发问题之Unable to instantiate application com.android.tools.fd.runtime.BootstrapApplication</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/由安卓开发中的一个坑引发的问题解决之道浅析/">由安卓开发中的一个坑引发的问题解决之道浅析</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/无住生心/">无住生心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/安卓-Bitmap-高效加载/">安卓 Bitmap 高效加载</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/获取安卓应用的包名和入口-Activity/">获取安卓应用的包名和入口 Activity</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/CardView-设置-selector/">CardView 设置 selector</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/ToolBar-修改菜单字体和颜色/">ToolBar 修改菜单字体和颜色</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/ubuntu升级后不能上网的解决方案/">ubuntu升级后不能上网的解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/android-colorPrimary-requires-API-level-21-current-min-is-14/">android:colorPrimary requires API level 21 (current min is 14)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/30/我的2015，我来总个小结/">我的2015，我来总个小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Android-Studio-多渠道打包及-gradlew-命令的基本使用/">Android Studio 多渠道打包、自动版本号及 gradlew 命令的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/常用工具资源分类/">常用工具资源分类</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/2015上海马拉松线上跑感悟-人生如同一场马拉松/">2015上海马拉松线上跑感悟-人生如同一场马拉松</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/三伏天，我想和这个世界谈谈/">三伏天，我想和这个世界谈谈</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/传统文化和第八识/">传统文化和第八识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/聊聊老罗锤子便签里的Markdown/">聊聊老罗锤子便签里的Markdown</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/由收花生所想到的/">由收花生所想到的</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-api23中删除HttpClient的相关类的解决方法/">Android api23中删除HttpClient的相关类的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/jdk1-8新特性之lambda表达式及在Android-Studio中的使用/">jdk1.8新特性之lambda表达式及在Android Studio中的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/java中String和InputStream的转换/">java中String和InputStream的转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/像生活一样跑步，像跑步一样生活/">像生活一样跑步，像跑步一样生活</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/android系统里的倒计时工具CountDownTimer无法cancle的解决方法/">Android系统里的倒计时工具CountDownTimer无法cancle的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之七——Android-Studio下git的正确使用/">git使用之七——Android Studio下git的正确使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之六——github协同工作的Fork-Pull-Request/">git使用之六——github协同工作的Fork+Pull Request</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之五——Github上fork项目后与原项目保持同步/">git使用之五——Github上fork项目后与原项目保持同步</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之四——windows下github桌面版的安装/">git使用之四——windows下github桌面版的安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之三——-git文件夹详解/">git使用之三——.git文件夹详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之二——-gitignore文件详解/">git使用之二——.gitignore文件详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之一——git的基本使用/">git使用之一——git的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/安卓注解那些事儿/">安卓注解那些事儿</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-Studio下添加引用jar文件和so文件/">Android Studio下添加引用jar文件和so文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-Studio-插件之内存泄露检测LeakCanary使用/">Android Studio 插件之内存泄露检测LeakCanary使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/安卓百度地图开发so文件引用失败问题研究/">安卓百度地图开发so文件引用失败问题研究</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-SQLite-ORM框架greenDAO在Android-Studio中的配置与使用/">Android SQLite ORM框架greenDAO在Android Studio中的配置与使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-Studio中常用插件及浅释/">Android Studio中常用插件及浅释</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-Studio下载、使用技巧及快捷键汇总/">Android Studio下载、使用技巧及快捷键汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/18/Activity-A-调用Activity-B-里的方法探索/">Activity A 调用Activity B 里的方法探索</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/18/Android混淆那些事儿/">Android混淆那些事儿</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/09/Android-读取txt文件并以utf-8格式转换成字符串/">Android 读取txt文件并以utf-8格式转换成字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/25/Android-开发知识点总结-长期更新/">Android 开发知识点总结(长期更新)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/25/Markdown嵌入视频/">Markdown嵌入视频</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/25/java下16进制字符串和字节数组的相互转化/">java下16进制字符串和字节数组的相互转化</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/23/ubuntu15-10升级时校验和不符的解决方法/">ubuntu15.10升级时校验和不符的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/ubuntu下运行genymotion-error-while-loading-shared-libraries-libgstapp-0-10-so-0-cannot-open-shared/">ubuntu下运行genymotion: error while loading shared libraries: libgstapp-0.10.so.0: cannot open shared</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/2015上海马拉松线上跑感悟-人生如同一场马拉松/">2015上海马拉松线上跑感悟-人生如同一场马拉松</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/17/Android-Studio美化之优雅的logcat/">Android Studio美化之优雅的logcat</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 安卓开发
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、簡單且強大的網誌框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="簡而不減 Hexo 雙欄網誌主題  v3.0">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到訪數: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本頁閱讀量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+  <a href="https://github.com/jp1017"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
+</body>
+</html>

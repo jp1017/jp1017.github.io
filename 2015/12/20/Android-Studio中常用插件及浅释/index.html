@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+  <meta charset="utf-8">
+  
+  <title>Android Studio中常用插件及浅释 | 安卓那些事儿</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="博客：    安卓之家微博：    追风917CSDN：    蒋朋的家简书：    追风917
+
+插件可以来这个仓库查找：Android Studio Plugins
+这里给出几个平时常用到的as插件，方便我们的开发。点击标题就直接可以进入插件的github源码查看。
+如何自己开发插件，请参考鸿洋大神的博客：自己编写Android Studio插件 别停留在用的程度了
+.ignore
+as第一大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Studio中常用插件及浅释">
+<meta property="og:url" content="http://jp1017.github.io/2015/12/20/Android-Studio中常用插件及浅释/index.html">
+<meta property="og:site_name" content="安卓那些事儿">
+<meta property="og:description" content="博客：    安卓之家微博：    追风917CSDN：    蒋朋的家简书：    追风917
+
+插件可以来这个仓库查找：Android Studio Plugins
+这里给出几个平时常用到的as插件，方便我们的开发。点击标题就直接可以进入插件的github源码查看。
+如何自己开发插件，请参考鸿洋大神的博客：自己编写Android Studio插件 别停留在用的程度了
+.ignore
+as第一大">
+<meta property="og:image" content="https://drscdn.500px.org/photo/105625329/m%3D2048/5bfda86d1b46da4fdd8857fe2bb1f0ef">
+<meta property="og:image" content="https://raw.githubusercontent.com/Skykai521/ECTranslation/master/img/translation_img.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kgmyshin/eventbus3-intellij-plugin/master/art/cap.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/kgmyshin/eventbus-intellij-plugin/master/art/cap.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/shiraji/permissions-dispatcher-plugin/master/website/images/pd.gif">
+<meta property="og:image" content="http://www.methodscount.com/images/methods-count-plugin-1.png">
+<meta property="og:image" content="http://www.methodscount.com/images/methods-count-plugin-2.png">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/20150928202523.png">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/20150928194919.png">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/20150928194920.gif">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/2015101834.gif">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/2015101833.png">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/201510211.jpg">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/2015101831.gif">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/2015101101.gif">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/20151011172328.png">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/2015101102.gif">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/2015101850.png">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/2015101851.png">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/2015101852.png">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/2015101853.png">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/20151230012.gif">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/20151230011.gif">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/20160216capture.gif">
+<meta property="og:image" content="http://7xlah4.com1.z0.glb.clouddn.com/20160317.png">
+<meta property="og:updated_time" content="2016-06-03T12:57:47.466Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android Studio中常用插件及浅释">
+<meta name="twitter:description" content="博客：    安卓之家微博：    追风917CSDN：    蒋朋的家简书：    追风917
+
+插件可以来这个仓库查找：Android Studio Plugins
+这里给出几个平时常用到的as插件，方便我们的开发。点击标题就直接可以进入插件的github源码查看。
+如何自己开发插件，请参考鸿洋大神的博客：自己编写Android Studio插件 别停留在用的程度了
+.ignore
+as第一大">
+  
+    <link rel="alternative" href="/atom.xml" title="安卓那些事儿" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xlah4.com1.z0.glb.clouddn.com/favicon.png">
+  
+  
+      <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+  
+  
+      <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+      <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+          fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+          scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+          search: undefined
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+      </script>
+  
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="http://7xlah4.com1.z0.glb.clouddn.com/ferrari.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">安卓开发</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">思想的流浪者</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜單</li>
+                        <li>標籤</li>
+                        
+                        <li>友情鏈接</li>
+                        
+                        
+                        <li>關於我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/jp1017" title="GitHub"></a>
+                            
+                                <a class="fa Email" target="_blank" href="/jp19891017@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1321395433/profile?topnav=1&wvr=6" title="新浪微博"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" title="简书"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Activity/">Activity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Annotation/">Annotation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bitmap/">Bitmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI/">CI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CardView/">CardView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CountDownTimer/">CountDownTimer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EventBus3/">EventBus3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HttpClient/">HttpClient</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/InputStream/">InputStream</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeakCanary/">LeakCanary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ToolBar/">ToolBar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USB摄像头/">USB摄像头</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ViewPager/">ViewPager</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genymotion/">genymotion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitignore/">gitignore</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gradle/">gradle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gradlew/">gradlew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/greenDAO/">greenDAO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar/">jar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jni/">jni</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logcat/">logcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tinker/">tinker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件/">事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件分发/">事件分发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二维码/">二维码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/年终总结/">年终总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信/">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/扫一扫/">扫一扫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/混淆/">混淆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图/">百度地图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/系统时间/">系统时间</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跑步/">跑步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于安卓开发</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">安卓开发</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="http://7xlah4.com1.z0.glb.clouddn.com/ferrari.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">安卓开发</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">思想的流浪者</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/jp1017" title="GitHub"></a>
+                            
+                                <a class="fa Email" target="_blank" href="/jp19891017@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1321395433/profile?topnav=1&wvr=6" title="新浪微博"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" title="简书"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Android-Studio中常用插件及浅释" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/20/Android-Studio中常用插件及浅释/" class="article-date">
+      <time datetime="2015-12-20T06:24:17.000Z" itemprop="datePublished">2015-12-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android Studio中常用插件及浅释
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Android-Studio/">Android Studio</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>博客：    <a href="http://jp1017.gitcafe.io/" target="_blank" rel="external">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+<p><img src="https://drscdn.500px.org/photo/105625329/m%3D2048/5bfda86d1b46da4fdd8857fe2bb1f0ef" alt="美景"></p>
+<p>插件可以来这个仓库查找：<a href="http://plugins.jetbrains.com/category/?androidstudio&amp;category_id=all" target="_blank" rel="external">Android Studio Plugins</a></p>
+<p>这里给出几个平时常用到的as插件，方便我们的开发。点击标题就直接可以进入插件的github源码查看。</p>
+<p>如何自己开发插件，请参考鸿洋大神的博客：<a href="https://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650820316&amp;idx=1&amp;sn=49d4e6b68b114a2e8a8e88f3d1b0cd9e&amp;scene=1&amp;srcid=0601lzX1UwNhWeitdRa3Bmfx#rd" target="_blank" rel="external">自己编写Android Studio插件 别停留在用的程度了</a></p>
+<h1 id="-ignore"><a href="https://github.com/hsz/idea-gitignore" target="_blank" rel="external">.ignore</a></h1><hr>
+<p>as第一大插件，版本控制必备，.gitignore内容写法，来这里看看：<a href="http://jp1017.gitcafe.io/2015/12/20/git%E4%BD%BF%E7%94%A8%E4%B9%8B%E4%BA%8C%E2%80%94%E2%80%94-gitignore%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/" target="_blank" rel="external">git使用之二——.gitignore文件详解 </a></p>
+<a id="more"></a>
+<p>当然，还可以按照作者的指南来操作咯，哈哈。香赞。</p>
+<h1 id="ECTranslation"><a href="https://github.com/Skykai521/ECTranslation" target="_blank" rel="external">ECTranslation</a></h1><hr>
+<p>可以将英文翻译为中文</p>
+<p><img src="https://raw.githubusercontent.com/Skykai521/ECTranslation/master/img/translation_img.png" width="600"></p>
+<h1 id="eventbus3-intellij-plugin"><a href="https://github.com/kgmyshin/eventbus3-intellij-plugin" target="_blank" rel="external">eventbus3-intellij-plugin</a></h1><hr>
+<p>EventBus3 事件管理</p>
+<p><img src="https://raw.githubusercontent.com/kgmyshin/eventbus3-intellij-plugin/master/art/cap.gif" width="600"></p>
+<h1 id="eventbus-intellij-plugin"><a href="https://github.com/kgmyshin/eventbus-intellij-plugin" target="_blank" rel="external">eventbus-intellij-plugin</a></h1><hr>
+<p>EventBus 事件管理</p>
+<p><img src="https://raw.githubusercontent.com/kgmyshin/eventbus-intellij-plugin/master/art/cap.gif" width="600"></p>
+<h1 id="PermissionsDispatcher"><a href="https://github.com/shiraji/permissions-dispatcher-plugin" target="_blank" rel="external">PermissionsDispatcher</a></h1><hr>
+<p>IntelliJ plugin for supporting PermissionsDispatcher</p>
+<p><img src="https://raw.githubusercontent.com/shiraji/permissions-dispatcher-plugin/master/website/images/pd.gif" width="600"></p>
+<h1 id="Android_Methods_Count"><a href="http://www.methodscount.com/plugins" target="_blank" rel="external">Android Methods Count</a></h1><hr>
+<p>展示安卓依赖库里方法数，支持的仓库包括：<code>Maven Central</code>, <code>jCenter</code>, <code>JitPack</code></p>
+<p><img src="http://www.methodscount.com/images/methods-count-plugin-1.png" alt="1"><br><img src="http://www.methodscount.com/images/methods-count-plugin-2.png" alt="2"></p>
+<h1 id="Genymotion"><a href="https://www.genymotion.com/#!/download" target="_blank" rel="external">Genymotion</a></h1><hr>
+<p>速度快，运行流畅的安卓模拟器</p>
+<p>来这里吧，专门给你准备的：<a href="http://www.ebaina.com/bbs/forum.php?mod=viewthread&amp;tid=8418&amp;extra=page%3D1" target="_blank" rel="external">Eclipse和Android Studio下安装Genymotion模拟器插件</a></p>
+<h1 id="ButterKnife_Zelezny"><a href="https://github.com/avast/android-butterknife-zelezny" target="_blank" rel="external">ButterKnife Zelezny</a></h1><hr>
+<p>Android Studio plug-in for generating ButterKnife injections from selected layout XML.</p>
+<p>插件下载如下：</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/20150928202523.png" alt="1"></p>
+<p>要配合一个库com.jakewharton:butterknife:7.0.1使用，把该库添加到build.gradle脚本里即可。</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/20150928194919.png" alt="2"></p>
+<p>使用如下：</p>
+<p>比如我们在activity的布局里定义了一个文本框，三个按钮，共四个id，然后我们来注解一下：鼠标放setContentView(R.layout.activity_main);下的activity_main任意位置，alt+insert，然后注解：</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/20150928194920.gif" alt="3"></p>
+<h1 id="Android_Studio_Prettify"><a href="https://github.com/Haehnchen/idea-android-studio-plugin" target="_blank" rel="external">Android Studio Prettify</a></h1><hr>
+<p>Android Studio plugin with some tools and usability improvements, Generator for inflater and activity setContentView view variables.</p>
+<p>如果你布局里有多个id，在activity里findViewById()会手写很多次，即使有ide辅助，但是还是略慢，这个插件就来释放你双手，作者的例子：</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/2015101834.gif" alt="Prettify"></p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/2015101833.png" alt="Prettify2"></p>
+<p>当然如果快速注解的话就用上面的ButterKnife咯。</p>
+<h1 id="ADB_WIFI"><a href="https://github.com/layerlre/ADBWIFI" target="_blank" rel="external">ADB WIFI</a></h1><hr>
+<p>通过wifi调试你的安卓app，释放usb数据线，实现调试无处不在。。。</p>
+<p>使用方法：<br>确保你的手机和电脑在同一wifi下，首先用usb连接手机很电脑，第一次还是需要的，后面连接完成后可以拔掉。然后连接他们， Tools → Android → ADB WIFI → ADB USB to WIFI 成功后会在右上角有个对话框，提示成功。然后拔掉你的数据线，调试无处不在模式开启。。。</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/201510211.jpg" alt="连接"></p>
+<h1 id="GsonFormat"><a href="https://github.com/zzz40500/GsonFormat" target="_blank" rel="external">GsonFormat</a></h1><hr>
+<p>根据JSONObject格式的字符串,自动生成实体类参数。<br>最新的1.2.0版本新增处女座模式 →_→ 是不是很贴心！</p>
+<p> 处女座模式就是给json每个key都可以配置生成的filedName，可能因为服务端的原因，或者历史的原因，导致服务器返回的字段名诡异，或是歧义的缩写。这个在之前的版本是不支持这个。</p>
+<p>作者给出的例子：</p>
+<p>有如下json数据：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "name": "王五",</span><br><span class="line">    "gender": "man",</span><br><span class="line">    "age": 15,</span><br><span class="line">    "height": "140cm",</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>生成实体类操作如下，win和linux下的快捷键是alt+insert</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/2015101831.gif" alt="GsonFormat"></p>
+<h1 id="LeakCanary"><a href="https://github.com/square/leakcanary" target="_blank" rel="external">LeakCanary</a></h1><hr>
+<p>良心企业Square最近刚开源的一个非常有用的工具，使用方法请看我的另一片文章：<a href="http://jp1017.gitcafe.io/2015/12/20/Android-Studio-%E6%8F%92%E4%BB%B6%E4%B9%8B%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E6%A3%80%E6%B5%8BLeakCanary%E4%BD%BF%E7%94%A8/" target="_blank" rel="external">Android Studio 插件之内存泄露检测LeakCanary使用</a></p>
+<h1 id="codota"><a href="https://www.codota.com/" target="_blank" rel="external">codota</a></h1><hr>
+<p>该网站搜集了大量的代码，号称超过700W的代码实例。<br>它提供了chrome插件和as插件。</p>
+<p>按照同样的方式安装codota插件之后，重启AS。使用快捷键ctrl + k，即可打开搜索界面，如果你的快捷键有冲突，随便打开一个界面，然后右键就可以看到Search Cotoda选项。</p>
+<h1 id="Android_Code_Generator"><a href="https://github.com/tmorcinek/android-codegenerator-plugin-intellij" target="_blank" rel="external">Android Code Generator</a></h1><hr>
+<p>如果你的xml布局里有n个id，需要用findViewById找到的话，手动的话，很累，这个插件就是释放你的双手，轻轻一点，轻松生成代码，然后你复制粘贴到你的代码就ok，我们来看：</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/2015101101.gif" alt="Android Code Generator"></p>
+<h1 id="Android_Postfix_completion"><a href="https://github.com/takahirom/android-postfix-plugin" target="_blank" rel="external">Android Postfix completion</a></h1><hr>
+<p>该插件可以快速书写log、toast等代码</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/20151011172328.png" alt="log"></p>
+<p>我们来具体操作：</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/2015101102.gif" alt="toast"></p>
+<h1 id="Android_Selectors_Generate"><a href="https://github.com/inmite/android-selector-chapek" target="_blank" rel="external">Android Selectors Generate</a></h1><hr>
+<p>Android Studio plugin which automatically generates drawable selectors from appropriately named resources.</p>
+<p>自动生成选择器，这玩意好用，很赞，但是要注意drawable下文件后缀哦，告诉美工小妹妹命名好哦，哈哈。</p>
+<p>文件后缀是这样的：</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/2015101850.png" alt="文件后缀"></p>
+<p>使用方法：</p>
+<p>1 右击drawable文件夹：</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/2015101851.png" alt="右击"></p>
+<p>2 选择Generate Android Selectors</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/2015101852.png" alt="selectors"></p>
+<p>3 自动生成选择器</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/2015101853.png" alt="选择器"></p>
+<h1 id="Android_File_Grouping"><a href="https://github.com/dmytrodanylyk/folding-plugin" target="_blank" rel="external">Android File Grouping</a></h1><hr>
+<p>去官网学习吧，用处不是很大，方便阅读。</p>
+<h1 id="FindBugs-IDEA"><a href="https://github.com/andrepdo/findbugs-idea/tree/master" target="_blank" rel="external">FindBugs-IDEA</a></h1><hr>
+<p>顾名思义，就是帮你找程序bug咯，自己研究去吧，给力，感恩作者。</p>
+<h1 id="Android_Parcelable_code_generator"><a href="https://github.com/mcharmas/android-parcelable-intellij-plugin/" target="_blank" rel="external">Android Parcelable code generator</a></h1><hr>
+<p>安卓下，推荐用Parcelable来实现数据序列化，如果需要实现Serilizeable接口的，也有插件，<a href="https://github.com/bunnyblue/SerializableParcelableGenerator" target="_blank" rel="external">SerializableParcelableGenerator</a></p>
+<p>使用也很简单，进入要序列化的bean类里，windows，linux下直接快捷键alt+insert，mac下右键Generator, 可以看到有个选项Parcelable，然后直接点击，就序列化完成咯。</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/20151230012.gif" alt="Parcelable"></p>
+<h1 id="Android_Drawable_Importer"><a href="https://github.com/winterDroid/android-drawable-importer-intellij-plugin" target="_blank" rel="external">Android Drawable Importer</a></h1><hr>
+<p>最常用的功能就是生成不同尺寸的图标，</p>
+<p>我这里有个需求，美工妹妹要陪男朋友，然后只给我一套xxh的图标，那么这个工具就是来解放你们的，手把手的教：</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/20151230011.gif" alt="Drawable"></p>
+<h1 id="android-material-design-icon-generator-plugin"><a href="https://github.com/konifar/android-material-design-icon-generator-plugin" target="_blank" rel="external">android-material-design-icon-generator-plugin</a></h1><hr>
+<p>This plugin help you to set material design icon to your project.</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/20160216capture.gif" alt="material"></p>
+<h1 id="AndroidStudioSuperPlugin"><a href="https://github.com/b2b2244424/AndroidStudioSuperPlugin" target="_blank" rel="external">AndroidStudioSuperPlugin</a></h1><hr>
+<p>这个是今天（2016年植树节）早上发现的，是几个插件的集成，包括：</p>
+<ul>
+<li>Android Studio Prettify</li>
+<li>GsonFormat</li>
+<li>Android Code Generator</li>
+<li>SelectorChapek</li>
+<li>Android Parcelable Generator</li>
+<li>folding-plugin</li>
+<li>Lifecycle-Sorter</li>
+</ul>
+<p>有了这个，可以删掉相关的插件咯，谢谢，哈哈哈</p>
+<h1 id="CodeGlance"><a href="https://github.com/Vektah/CodeGlance" target="_blank" rel="external">CodeGlance</a></h1><hr>
+<p>Intelij IDEA plugin for displaying a code mini-map similar to the one found in Sublime</p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/20160317.png" alt="CodeGlance"></p>
+<p>分享是一种美德，更是一种生活方式！！</p>
+<blockquote>
+<p>也许你会说我是一个梦想者，但我不是唯一的一个。</p>
+<p>悦分享，越快乐^_^</p>
+</blockquote>
+<p>欢迎交流，转载请注明出处，谢谢！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文標題:</span><a href="/2015/12/20/Android-Studio中常用插件及浅释/">Android Studio中常用插件及浅释</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主頁">安卓开发</a></p>
+        <p><span>發布時間:</span>2015-12-20, 14:24:17</p>
+        <p><span>最後更新:</span>2016-06-03, 20:57:47</p>
+        <p>
+            <span>原始鏈接:</span><a class="post-url" href="/2015/12/20/Android-Studio中常用插件及浅释/" title="Android Studio中常用插件及浅释">http://jp1017.github.io/2015/12/20/Android-Studio中常用插件及浅释/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://jp1017.github.io/2015/12/20/Android-Studio中常用插件及浅释/　　作者: 安卓开发" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>許可協議:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"姓名標示-非商業性-相同方式分享 4.0 國際"</a> 轉載請保留原文鏈接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2015/12/20/Android-SQLite-ORM框架greenDAO在Android-Studio中的配置与使用/">
+                    Android SQLite ORM框架greenDAO在Android Studio中的配置与使用
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2015/12/20/Android-Studio下载、使用技巧及快捷键汇总/">
+                    Android Studio下载、使用技巧及快捷键汇总
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#-ignore"><span class="toc-number">1.</span> <span class="toc-text">.ignore</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ECTranslation"><span class="toc-number">2.</span> <span class="toc-text">ECTranslation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#eventbus3-intellij-plugin"><span class="toc-number">3.</span> <span class="toc-text">eventbus3-intellij-plugin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#eventbus-intellij-plugin"><span class="toc-number">4.</span> <span class="toc-text">eventbus-intellij-plugin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PermissionsDispatcher"><span class="toc-number">5.</span> <span class="toc-text">PermissionsDispatcher</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android_Methods_Count"><span class="toc-number">6.</span> <span class="toc-text">Android Methods Count</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Genymotion"><span class="toc-number">7.</span> <span class="toc-text">Genymotion</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ButterKnife_Zelezny"><span class="toc-number">8.</span> <span class="toc-text">ButterKnife Zelezny</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android_Studio_Prettify"><span class="toc-number">9.</span> <span class="toc-text">Android Studio Prettify</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ADB_WIFI"><span class="toc-number">10.</span> <span class="toc-text">ADB WIFI</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GsonFormat"><span class="toc-number">11.</span> <span class="toc-text">GsonFormat</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LeakCanary"><span class="toc-number">12.</span> <span class="toc-text">LeakCanary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#codota"><span class="toc-number">13.</span> <span class="toc-text">codota</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android_Code_Generator"><span class="toc-number">14.</span> <span class="toc-text">Android Code Generator</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android_Postfix_completion"><span class="toc-number">15.</span> <span class="toc-text">Android Postfix completion</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android_Selectors_Generate"><span class="toc-number">16.</span> <span class="toc-text">Android Selectors Generate</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android_File_Grouping"><span class="toc-number">17.</span> <span class="toc-text">Android File Grouping</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#FindBugs-IDEA"><span class="toc-number">18.</span> <span class="toc-text">FindBugs-IDEA</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android_Parcelable_code_generator"><span class="toc-number">19.</span> <span class="toc-text">Android Parcelable code generator</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android_Drawable_Importer"><span class="toc-number">20.</span> <span class="toc-text">Android Drawable Importer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#android-material-design-icon-generator-plugin"><span class="toc-number">21.</span> <span class="toc-text">android-material-design-icon-generator-plugin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AndroidStudioSuperPlugin"><span class="toc-number">22.</span> <span class="toc-text">AndroidStudioSuperPlugin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CodeGlance"><span class="toc-number">23.</span> <span class="toc-text">CodeGlance</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隱藏目錄"  title="點擊按鈕隱藏或者顯示文章目錄">
+<script>
+    var valueHide = "隱藏目錄";
+    var valueShow = "顯示目錄";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Android Studio中常用插件及浅释　| 安卓那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2015/12/20/Android-Studio中常用插件及浅释/" data-title="Android Studio中常用插件及浅释" data-url="http://jp1017.github.io/2015/12/20/Android-Studio中常用插件及浅释/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        
+        <!--ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';-->
+        <!-- 自定义添加浏览器和系统标识 -->
+        ds.src = 'https://jp1017.github.io/js/embed.js';
+        
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/12/20/Android-SQLite-ORM框架greenDAO在Android-Studio中的配置与使用/" title="上一篇: Android SQLite ORM框架greenDAO在Android Studio中的配置与使用">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2015/12/20/Android-Studio下载、使用技巧及快捷键汇总/" title="下一篇: Android Studio下载、使用技巧及快捷键汇总">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/07/反编译某软件直接进入微信二维码扫描界面/">反编译某软件直接进入微信二维码扫描界面</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/31/Android-Studio-使用技巧之打造优雅的-Logcat-Console/">Android Studio 使用技巧之打造优雅的 Logcat Console</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/08/加速-gradle-编译之屏蔽部分-Task/">加速 gradle 编译之屏蔽部分 Task</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/25/微信热修复tinker及tinker-server快速接入/">微信热修复tinker及tinker server快速接入</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/11/安卓数据库-greenDAO3-使用之二数据库升级/">安卓数据库 greenDAO3 使用之二数据库升级</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/11/安卓数据库-greenDAO3-使用之一项目配置及增删改查/">安卓数据库 greenDAO3 使用之一项目配置及增删改查</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/11/删除-Ubuntu-系统旧内核/">删除 Ubuntu 系统旧内核</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/25/安卓应用修改系统时间/">安卓应用修改系统时间</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/15/USB摄像头预览识别二维码/">USB摄像头预览识别二维码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/28/安卓开发之屏蔽按键抖动，连击，长按事件/">安卓开发之屏蔽按键抖动，连击，长按事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/28/ViewPager-嵌套百度地图事件冲突的解决方法/">ViewPager 嵌套百度地图事件冲突的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/11/Android-Studio-引用系统-jar-包的正确姿势/">Android Studio 引用系统 jar 包的正确姿势</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/30/jni-开发错误之-java-lang-UnsatisfiedLinkError-dlopen-failed-cannot-locate-symbol-tcgetattr-referenced-by-libserial-port-so/">jni 开发错误之 java.lang.UnsatisfiedLinkError: dlopen failed: cannot locate symbol tcgetattr referenced by libserial_port.so...</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/22/Android-Studio-clean-时产生-Error-Execution-failed-for-task-app-mockableAndroidJar java.lang.NullPointerException (no error message)/">Android Studio clean 时产生 Error:Execution failed for task ':app:mockableAndroidJar' > java.lang.NullPointerException (no error message) </a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/17/工作两年的所思所想所感/">工作两年的所思所想所感</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/31/EventBus3-简单使用及注意点/">EventBus3 简单使用及注意点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/23/安卓定位及坐标转换/">安卓定位及坐标转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/25/ubuntu-下常用软件及主题推荐/">ubuntu 下常用软件及主题推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/java-基本数据类型及数组使用集合/">java 基本数据类型及数组使用集锦</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/手把手教你利用-Travis-CI-把-Android-项目部署到-github/">手把手教你利用 Travis CI 把 Android 项目部署到 GitHub</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/05/Android-Studio-使用之文件模板/">Android Studio 使用之文件模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/01/Android-Studio-开发错误-Installation-failed-with-message-INSTALL-FAILED-SHARED-USER-INCOMPATIBLE/">Android Studio 开发错误 Installation failed with message INSTALL_FAILED_SHARED_USER_INCOMPATIBLE</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/安卓-jni-开发之-native-方法的动态注册/">安卓 jni 开发之 native 方法的动态注册</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/安卓程序中调用-linux-命令/">安卓程序中调用 linux 命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/22/安卓-jni-开发错误-UnsatisfiedLinkError-Native-method-not-found/">安卓 jni 开发错误 UnsatisfiedLinkError: Native method not found</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/22/Android-Studio-配置-gradle-脚本错误-Gradle-DSL-method-not-found-minus/">Android Studio 配置 gradle 脚本错误:Gradle DSL method not found: 'minus()'</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/21/Android Studio 下安卓-jni-开发错误-undefined-reference-to-AndroidBitmap-getInfo/">Android Studio 下安卓 jni 开发错误 undefined reference to AndroidBitmap_getInfo</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/安卓 jni 开发 —— Android Studio 打包 so 的坑/">安卓 jni 开发 —— Android Studio 打包 so 的坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/Android Studio 下安卓-jni-开发错误-undefined-reference-to-android-log-print/">Android Studio 下安卓 jni 开发错误 undefined reference to __android_log_print</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/安卓开发问题之Unable-to-instantiate-application-com-android-tools-fd-runtime-BootstrapApplication/">安卓开发问题之Unable to instantiate application com.android.tools.fd.runtime.BootstrapApplication</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/由安卓开发中的一个坑引发的问题解决之道浅析/">由安卓开发中的一个坑引发的问题解决之道浅析</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/无住生心/">无住生心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/安卓-Bitmap-高效加载/">安卓 Bitmap 高效加载</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/获取安卓应用的包名和入口-Activity/">获取安卓应用的包名和入口 Activity</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/CardView-设置-selector/">CardView 设置 selector</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/ToolBar-修改菜单字体和颜色/">ToolBar 修改菜单字体和颜色</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/ubuntu升级后不能上网的解决方案/">ubuntu升级后不能上网的解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/android-colorPrimary-requires-API-level-21-current-min-is-14/">android:colorPrimary requires API level 21 (current min is 14)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/30/我的2015，我来总个小结/">我的2015，我来总个小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Android-Studio-多渠道打包及-gradlew-命令的基本使用/">Android Studio 多渠道打包、自动版本号及 gradlew 命令的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/常用工具资源分类/">常用工具资源分类</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/2015上海马拉松线上跑感悟-人生如同一场马拉松/">2015上海马拉松线上跑感悟-人生如同一场马拉松</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/三伏天，我想和这个世界谈谈/">三伏天，我想和这个世界谈谈</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/传统文化和第八识/">传统文化和第八识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/聊聊老罗锤子便签里的Markdown/">聊聊老罗锤子便签里的Markdown</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/由收花生所想到的/">由收花生所想到的</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-api23中删除HttpClient的相关类的解决方法/">Android api23中删除HttpClient的相关类的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/jdk1-8新特性之lambda表达式及在Android-Studio中的使用/">jdk1.8新特性之lambda表达式及在Android Studio中的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/java中String和InputStream的转换/">java中String和InputStream的转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/像生活一样跑步，像跑步一样生活/">像生活一样跑步，像跑步一样生活</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/android系统里的倒计时工具CountDownTimer无法cancle的解决方法/">Android系统里的倒计时工具CountDownTimer无法cancle的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之七——Android-Studio下git的正确使用/">git使用之七——Android Studio下git的正确使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之六——github协同工作的Fork-Pull-Request/">git使用之六——github协同工作的Fork+Pull Request</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之五——Github上fork项目后与原项目保持同步/">git使用之五——Github上fork项目后与原项目保持同步</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之四——windows下github桌面版的安装/">git使用之四——windows下github桌面版的安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之三——-git文件夹详解/">git使用之三——.git文件夹详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之二——-gitignore文件详解/">git使用之二——.gitignore文件详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/git使用之一——git的基本使用/">git使用之一——git的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/安卓注解那些事儿/">安卓注解那些事儿</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-Studio下添加引用jar文件和so文件/">Android Studio下添加引用jar文件和so文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-Studio-插件之内存泄露检测LeakCanary使用/">Android Studio 插件之内存泄露检测LeakCanary使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/安卓百度地图开发so文件引用失败问题研究/">安卓百度地图开发so文件引用失败问题研究</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-SQLite-ORM框架greenDAO在Android-Studio中的配置与使用/">Android SQLite ORM框架greenDAO在Android Studio中的配置与使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-Studio中常用插件及浅释/">Android Studio中常用插件及浅释</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/Android-Studio下载、使用技巧及快捷键汇总/">Android Studio下载、使用技巧及快捷键汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/18/Activity-A-调用Activity-B-里的方法探索/">Activity A 调用Activity B 里的方法探索</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/18/Android混淆那些事儿/">Android混淆那些事儿</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/09/Android-读取txt文件并以utf-8格式转换成字符串/">Android 读取txt文件并以utf-8格式转换成字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/25/Android-开发知识点总结-长期更新/">Android 开发知识点总结(长期更新)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/25/Markdown嵌入视频/">Markdown嵌入视频</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/25/java下16进制字符串和字节数组的相互转化/">java下16进制字符串和字节数组的相互转化</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/23/ubuntu15-10升级时校验和不符的解决方法/">ubuntu15.10升级时校验和不符的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/ubuntu下运行genymotion-error-while-loading-shared-libraries-libgstapp-0-10-so-0-cannot-open-shared/">ubuntu下运行genymotion: error while loading shared libraries: libgstapp-0.10.so.0: cannot open shared</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/2015上海马拉松线上跑感悟-人生如同一场马拉松/">2015上海马拉松线上跑感悟-人生如同一场马拉松</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/17/Android-Studio美化之优雅的logcat/">Android Studio美化之优雅的logcat</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 安卓开发
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、簡單且強大的網誌框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="簡而不減 Hexo 雙欄網誌主題  v3.0">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到訪數: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本頁閱讀量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+  <a href="https://github.com/jp1017"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
+</body>
+</html>
