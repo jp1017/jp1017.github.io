@@ -4,7 +4,7 @@
   <subtitle><![CDATA[思想的流浪者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jp1017.github.io/"/>
-  <updated>2017-07-16T12:14:18.200Z</updated>
+  <updated>2017-07-16T12:29:00.570Z</updated>
   <id>http://jp1017.github.io/</id>
   
   <author>
@@ -15,14 +15,14 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[安卓开发中分析其他应用所必备的那些神器]]></title>
-    <link href="http://jp1017.github.io/2017/07/08/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E4%B8%AD%E5%88%86%E6%9E%90%E5%85%B6%E4%BB%96%E5%BA%94%E7%94%A8%E6%89%80%E5%BF%85%E5%A4%87%E7%9A%84%E9%82%A3%E4%BA%9B%E7%A5%9E%E5%99%A8/"/>
-    <id>http://jp1017.github.io/2017/07/08/安卓开发中分析其他应用所必备的那些神器/</id>
+    <title><![CDATA[安卓开发中必备的那些神器APP]]></title>
+    <link href="http://jp1017.github.io/2017/07/08/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E4%B8%AD%E5%BF%85%E5%A4%87%E7%9A%84%E9%82%A3%E4%BA%9B%E7%A5%9E%E5%99%A8APP/"/>
+    <id>http://jp1017.github.io/2017/07/08/安卓开发中必备的那些神器APP/</id>
     <published>2017-07-08T11:26:14.000Z</published>
-    <updated>2017-07-16T12:14:18.200Z</updated>
+    <updated>2017-07-16T12:29:00.570Z</updated>
     <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://d3cbihxaqsuq0s.cloudfront.net/images/44752772_xl.jpg" alt="每日一景"></p>
-<p>今天是2017年7月16日，初伏第五天，爬山游泳计划因连夜雨而取消，于是乎，加了个小班，顺便跑了个10公里，有人说你这么瘦，天这么热，你时不时傻，对此只好一笑而过，大概这就是真爱吧。比起无氧的增肌，有氧的跑步和游泳更爱一些，记得跑后拉伸哦。</p>
+<p>今天是2017年7月16日，初伏第五天，爬山游泳计划因连夜雨而取消，于是乎，加了个小班，顺便跑了个5公里，好热的。比起无氧的增肌，有氧的跑步和游泳更爱一些，记得跑后拉伸哦。</p>
 <p>上一篇文章写了反编译某应用获取所需代码，用到了许多神器，这篇文章就来一一铺开。。。</p>
 <h2 id="apkpure"><a href="https://apkpure.com/" target="_blank" rel="external">apkpure</a></h2><p>这个是用来下载第三方应用的，无需Google play 即可下载 play 商店里的各种应用</p>
 <h2 id="当前Activity">当前Activity</h2><p>该款软件可显示最前台页面所在应用的包名及Activity</p>
@@ -57,7 +57,7 @@
     <summary type="html">
     <![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles">追风917</a></p>
 <p><img src="https://d3cbihxaqsuq0s.cloudfront.net/images/44752772_xl.jpg" alt="每日一景"></p>
-<p>今天是2017年7月16日，初伏第五天，爬山游泳计划因连夜雨而取消，于是乎，加了个小班，顺便跑了个10公里，有人说你这么瘦，天这么热，你时不时傻，对此只好一笑而过，大概这就是真爱吧。比起无氧的增肌，有氧的跑步和游泳更爱一些，记得跑后拉伸哦。</p>
+<p>今天是2017年7月16日，初伏第五天，爬山游泳计划因连夜雨而取消，于是乎，加了个小班，顺便跑了个5公里，好热的。比起无氧的增肌，有氧的跑步和游泳更爱一些，记得跑后拉伸哦。</p>
 <p>上一篇文章写了反编译某应用获取所需代码，用到了许多神器，这篇文章就来一一铺开。。。</p>
 <h2 id="apkpure"><a href="https://apkpure.com/">apkpure</a></h2><p>这个是用来下载第三方应用的，无需Google play 即可下载 play 商店里的各种应用</p>
 <h2 id="当前Activity">当前Activity</h2><p>该款软件可显示最前台页面所在应用的包名及Activity</p>
