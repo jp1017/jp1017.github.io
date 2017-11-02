@@ -3,9 +3,9 @@
   <title><![CDATA[安卓那些事儿]]></title>
   <subtitle><![CDATA[思想的流浪者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://jp1017.github.io/"/>
+  <link href="http://jp1017.top/"/>
   <updated>2017-07-17T11:26:12.562Z</updated>
-  <id>http://jp1017.github.io/</id>
+  <id>http://jp1017.top/</id>
   
   <author>
     <name><![CDATA[安卓开发]]></name>
@@ -16,11 +16,11 @@
   
   <entry>
     <title><![CDATA[安卓开发中必备的那些神器APP]]></title>
-    <link href="http://jp1017.github.io/2017/07/08/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E4%B8%AD%E5%BF%85%E5%A4%87%E7%9A%84%E9%82%A3%E4%BA%9B%E7%A5%9E%E5%99%A8APP/"/>
-    <id>http://jp1017.github.io/2017/07/08/安卓开发中必备的那些神器APP/</id>
+    <link href="http://jp1017.top/2017/07/08/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E4%B8%AD%E5%BF%85%E5%A4%87%E7%9A%84%E9%82%A3%E4%BA%9B%E7%A5%9E%E5%99%A8APP/"/>
+    <id>http://jp1017.top/2017/07/08/安卓开发中必备的那些神器APP/</id>
     <published>2017-07-08T11:26:14.000Z</published>
     <updated>2017-07-17T11:26:12.562Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://d3cbihxaqsuq0s.cloudfront.net/images/44752772_xl.jpg" alt="每日一景"></p>
 <p>今天是2017年7月16日，初伏第五天，爬山游泳计划因连夜雨而取消，于是乎，加了个小班，顺便跑了个5公里，好热的。比起无氧的增肌，有氧的跑步和游泳更爱一些，记得跑后拉伸哦。</p>
 <p>上一篇文章写了反编译某应用获取所需代码，用到了许多神器，这篇文章就来一一铺开。。。</p>
@@ -68,19 +68,19 @@
     
     </summary>
     
-      <category term="神器，反编译" scheme="http://jp1017.github.io/tags/%E7%A5%9E%E5%99%A8%EF%BC%8C%E5%8F%8D%E7%BC%96%E8%AF%91/"/>
+      <category term="神器，反编译" scheme="http://jp1017.top/tags/%E7%A5%9E%E5%99%A8%EF%BC%8C%E5%8F%8D%E7%BC%96%E8%AF%91/"/>
     
-      <category term="Android" scheme="http://jp1017.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[反编译某软件直接进入微信二维码扫描界面]]></title>
-    <link href="http://jp1017.github.io/2017/07/07/%E5%8F%8D%E7%BC%96%E8%AF%91%E6%9F%90%E8%BD%AF%E4%BB%B6%E7%9B%B4%E6%8E%A5%E8%BF%9B%E5%85%A5%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81%E6%89%AB%E6%8F%8F%E7%95%8C%E9%9D%A2/"/>
-    <id>http://jp1017.github.io/2017/07/07/反编译某软件直接进入微信二维码扫描界面/</id>
+    <link href="http://jp1017.top/2017/07/07/%E5%8F%8D%E7%BC%96%E8%AF%91%E6%9F%90%E8%BD%AF%E4%BB%B6%E7%9B%B4%E6%8E%A5%E8%BF%9B%E5%85%A5%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81%E6%89%AB%E6%8F%8F%E7%95%8C%E9%9D%A2/"/>
+    <id>http://jp1017.top/2017/07/07/反编译某软件直接进入微信二维码扫描界面/</id>
     <published>2017-07-07T12:34:48.000Z</published>
     <updated>2017-07-07T12:37:54.610Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://d3cbihxaqsuq0s.cloudfront.net/images/37405678_xl.jpg" alt="每日一景"></p>
 <p>今天无意发现了一款软件,进去点了两下,竟然直接跳到了微信二维码扫描界面,喜悦之情难以掩饰,终于等到你…</p>
 <h2 id="昨夜西风凋碧树">昨夜西风凋碧树</h2><p>没错,三个月之前,我需要这个技能,网上搜索了一番,得到如下代码:</p>
@@ -129,21 +129,21 @@
     
     </summary>
     
-      <category term="微信" scheme="http://jp1017.github.io/tags/%E5%BE%AE%E4%BF%A1/"/>
+      <category term="微信" scheme="http://jp1017.top/tags/%E5%BE%AE%E4%BF%A1/"/>
     
-      <category term="扫一扫" scheme="http://jp1017.github.io/tags/%E6%89%AB%E4%B8%80%E6%89%AB/"/>
+      <category term="扫一扫" scheme="http://jp1017.top/tags/%E6%89%AB%E4%B8%80%E6%89%AB/"/>
     
-      <category term="Android" scheme="http://jp1017.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Android Studio 使用技巧之打造优雅的 Logcat Console]]></title>
-    <link href="http://jp1017.github.io/2017/03/31/Android-Studio-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B9%8B%E6%89%93%E9%80%A0%E4%BC%98%E9%9B%85%E7%9A%84-Logcat-Console/"/>
-    <id>http://jp1017.github.io/2017/03/31/Android-Studio-使用技巧之打造优雅的-Logcat-Console/</id>
+    <link href="http://jp1017.top/2017/03/31/Android-Studio-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B9%8B%E6%89%93%E9%80%A0%E4%BC%98%E9%9B%85%E7%9A%84-Logcat-Console/"/>
+    <id>http://jp1017.top/2017/03/31/Android-Studio-使用技巧之打造优雅的-Logcat-Console/</id>
     <published>2017-03-31T12:37:53.000Z</published>
     <updated>2017-03-31T11:41:41.420Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://farm1.staticflickr.com/405/18579026941_707c5e524e_k.jpg" alt="来自 Momentum 的美图"></p>
 <p>这篇文章主要介绍基于 <code>正则表达式</code> 屏蔽不需要的字符串, 打造更科学的日志终端.</p>
 <h2 id="来源">来源</h2><p>先上一张图吧:</p>
@@ -187,19 +187,19 @@
     
     </summary>
     
-      <category term="Android Studio" scheme="http://jp1017.github.io/tags/Android-Studio/"/>
+      <category term="Android Studio" scheme="http://jp1017.top/tags/Android-Studio/"/>
     
-      <category term="Android Studio" scheme="http://jp1017.github.io/categories/Android-Studio/"/>
+      <category term="Android Studio" scheme="http://jp1017.top/categories/Android-Studio/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[加速 gradle 编译之屏蔽部分 Task]]></title>
-    <link href="http://jp1017.github.io/2017/03/08/%E5%8A%A0%E9%80%9F-gradle-%E7%BC%96%E8%AF%91%E4%B9%8B%E5%B1%8F%E8%94%BD%E9%83%A8%E5%88%86-Task/"/>
-    <id>http://jp1017.github.io/2017/03/08/加速-gradle-编译之屏蔽部分-Task/</id>
+    <link href="http://jp1017.top/2017/03/08/%E5%8A%A0%E9%80%9F-gradle-%E7%BC%96%E8%AF%91%E4%B9%8B%E5%B1%8F%E8%94%BD%E9%83%A8%E5%88%86-Task/"/>
+    <id>http://jp1017.top/2017/03/08/加速-gradle-编译之屏蔽部分-Task/</id>
     <published>2017-03-08T12:37:53.000Z</published>
     <updated>2017-03-08T12:45:36.011Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/152670813/m%3D2048/74a0afd72b362155a4149bcf691942e2" alt="每日一景"></p>
 <h2 id="灵感来源">灵感来源</h2><p>该篇博客灵感来自之前的一片博客:</p>
 <p><a href="http://www.jianshu.com/p/1870d4a655bf" target="_blank" rel="external">Android Studio clean 时产生 Error:Execution failed for task ‘:app:mockableAndroidJar’ &gt; java.lang.NullPointerException (no error message)</a></p>
@@ -270,21 +270,21 @@
     
     </summary>
     
-      <category term="Android Studio" scheme="http://jp1017.github.io/tags/Android-Studio/"/>
+      <category term="Android Studio" scheme="http://jp1017.top/tags/Android-Studio/"/>
     
-      <category term="gradle" scheme="http://jp1017.github.io/tags/gradle/"/>
+      <category term="gradle" scheme="http://jp1017.top/tags/gradle/"/>
     
-      <category term="gradle" scheme="http://jp1017.github.io/categories/gradle/"/>
+      <category term="gradle" scheme="http://jp1017.top/categories/gradle/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[微信热修复tinker及tinker server快速接入]]></title>
-    <link href="http://jp1017.github.io/2016/11/25/%E5%BE%AE%E4%BF%A1%E7%83%AD%E4%BF%AE%E5%A4%8Dtinker%E5%8F%8Atinker-server%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5/"/>
-    <id>http://jp1017.github.io/2016/11/25/微信热修复tinker及tinker-server快速接入/</id>
+    <link href="http://jp1017.top/2016/11/25/%E5%BE%AE%E4%BF%A1%E7%83%AD%E4%BF%AE%E5%A4%8Dtinker%E5%8F%8Atinker-server%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5/"/>
+    <id>http://jp1017.top/2016/11/25/微信热修复tinker及tinker-server快速接入/</id>
     <published>2016-11-25T11:44:08.000Z</published>
     <updated>2016-11-25T12:00:33.757Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://images.unsplash.com/photo-1479030160180-b1860951d696?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=58049462f876ab4785ae452fcce306ce" alt="来自unsplash的美图"></p>
 <p>当前热修复方案很多，今天研究了下微信的tinker，使用效果还是不错的，配合tinker server服用更佳。下面介绍两者的使用，以便大家快速接入。</p>
 <p><img src="http://7xlah4.com1.z0.glb.clouddn.com/2016-11-25-16-23-56-729_tinker.sample..png" width="320"> <img src="http://7xlah4.com1.z0.glb.clouddn.com/2016-11-25-18-57-32-149_tinker.sample..png" width="320"></p>
@@ -393,19 +393,19 @@
     
     </summary>
     
-      <category term="tinker" scheme="http://jp1017.github.io/tags/tinker/"/>
+      <category term="tinker" scheme="http://jp1017.top/tags/tinker/"/>
     
-      <category term="Android" scheme="http://jp1017.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[安卓数据库 greenDAO3 使用之二数据库升级]]></title>
-    <link href="http://jp1017.github.io/2016/10/11/%E5%AE%89%E5%8D%93%E6%95%B0%E6%8D%AE%E5%BA%93-greenDAO3-%E4%BD%BF%E7%94%A8%E4%B9%8B%E4%BA%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/"/>
-    <id>http://jp1017.github.io/2016/10/11/安卓数据库-greenDAO3-使用之二数据库升级/</id>
+    <link href="http://jp1017.top/2016/10/11/%E5%AE%89%E5%8D%93%E6%95%B0%E6%8D%AE%E5%BA%93-greenDAO3-%E4%BD%BF%E7%94%A8%E4%B9%8B%E4%BA%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/"/>
+    <id>http://jp1017.top/2016/10/11/安卓数据库-greenDAO3-使用之二数据库升级/</id>
     <published>2016-10-11T06:00:46.000Z</published>
     <updated>2016-10-14T12:45:35.815Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/99564077/m%3D2048/10c2a2c4b75b9fd4e018ea9e1c5cf50a" alt="每日一景"></p>
 <p><a href="https://travis-ci.org/jp1017/GreenDAO3_Demo" target="_blank" rel="external"><img src="https://travis-ci.org/jp1017/GreenDAO3_Demo.svg?branch=master" alt="Build Status"></a></p>
 <h2 id="数据库升级">数据库升级</h2><hr>
@@ -457,29 +457,29 @@
     
     </summary>
     
-      <category term="Android" scheme="http://jp1017.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/tags/Android/"/>
     
-      <category term="greenDAO" scheme="http://jp1017.github.io/tags/greenDAO/"/>
+      <category term="greenDAO" scheme="http://jp1017.top/tags/greenDAO/"/>
     
-      <category term="数据库" scheme="http://jp1017.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://jp1017.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="Android" scheme="http://jp1017.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[安卓数据库 greenDAO3 使用之一项目配置及增删改查]]></title>
-    <link href="http://jp1017.github.io/2016/10/11/%E5%AE%89%E5%8D%93%E6%95%B0%E6%8D%AE%E5%BA%93-greenDAO3-%E4%BD%BF%E7%94%A8%E4%B9%8B%E4%B8%80%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/"/>
-    <id>http://jp1017.github.io/2016/10/11/安卓数据库-greenDAO3-使用之一项目配置及增删改查/</id>
+    <link href="http://jp1017.top/2016/10/11/%E5%AE%89%E5%8D%93%E6%95%B0%E6%8D%AE%E5%BA%93-greenDAO3-%E4%BD%BF%E7%94%A8%E4%B9%8B%E4%B8%80%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/"/>
+    <id>http://jp1017.top/2016/10/11/安卓数据库-greenDAO3-使用之一项目配置及增删改查/</id>
     <published>2016-10-11T06:00:11.000Z</published>
     <updated>2016-11-04T05:24:29.011Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/123084989/m%3D2048/3cf62f6ffbb8163c1c192f28fb50da24" alt="每日一景"></p>
 <p><a href="https://travis-ci.org/jp1017/GreenDAO3_Demo" target="_blank" rel="external"><img src="https://travis-ci.org/jp1017/GreenDAO3_Demo.svg?branch=master" alt="Build Status"></a></p>
 <h2 id="配置">配置</h2><hr>
 <p><strong>喜讯</strong>：现在greenDAO升级到了3.0版本，不需要java项目了</p>
 <p>强烈建议升级到3.0版本，该版本采用注解的方式通过编译生成Java数据对象和DAO对象，配置更简单</p>
-<p>之前2.0版本的配置也写过，参考这里：<a href="https://jp1017.github.io/2015/12/20/Android-SQLite-ORM%E6%A1%86%E6%9E%B6greenDAO%E5%9C%A8Android-Studio%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/">Android SQLite ORM框架greenDAO在Android Studio中的配置与使用</a></p>
+<p>之前2.0版本的配置也写过，参考这里：<a href="https://jp1017.github.io/2015/12/20/Android-SQLite-ORM%E6%A1%86%E6%9E%B6greenDAO%E5%9C%A8Android-Studio%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/" target="_blank" rel="external">Android SQLite ORM框架greenDAO在Android Studio中的配置与使用</a></p>
 <a id="more"></a>
 <h3 id="1_添加依赖">1 添加依赖</h3><hr>
 <p>项目的gradle脚本：</p>
@@ -546,23 +546,23 @@
     
     </summary>
     
-      <category term="Android" scheme="http://jp1017.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/tags/Android/"/>
     
-      <category term="greenDAO" scheme="http://jp1017.github.io/tags/greenDAO/"/>
+      <category term="greenDAO" scheme="http://jp1017.top/tags/greenDAO/"/>
     
-      <category term="数据库" scheme="http://jp1017.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://jp1017.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="Android" scheme="http://jp1017.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[删除 Ubuntu 系统旧内核]]></title>
-    <link href="http://jp1017.github.io/2016/10/11/%E5%88%A0%E9%99%A4-Ubuntu-%E7%B3%BB%E7%BB%9F%E6%97%A7%E5%86%85%E6%A0%B8/"/>
-    <id>http://jp1017.github.io/2016/10/11/删除-Ubuntu-系统旧内核/</id>
+    <link href="http://jp1017.top/2016/10/11/%E5%88%A0%E9%99%A4-Ubuntu-%E7%B3%BB%E7%BB%9F%E6%97%A7%E5%86%85%E6%A0%B8/"/>
+    <id>http://jp1017.top/2016/10/11/删除-Ubuntu-系统旧内核/</id>
     <published>2016-10-11T05:21:58.000Z</published>
     <updated>2016-10-14T12:59:41.097Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/153625563/m%3D2048/67caa338644b5cc0d41766f4743e64c9" alt="每日一景"></p>
 <h2 id="警告">警告</h2><p><strong>删内核前请保存好您的数据信息</strong></p>
 <p>随着每次升级 Ubuntu 系统，占用空间都会增大，虽然我们可以通过命令</p>
@@ -617,19 +617,19 @@
     
     </summary>
     
-      <category term="ubuntu" scheme="http://jp1017.github.io/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="http://jp1017.top/tags/ubuntu/"/>
     
-      <category term="ubuntu" scheme="http://jp1017.github.io/categories/ubuntu/"/>
+      <category term="ubuntu" scheme="http://jp1017.top/categories/ubuntu/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[安卓应用修改系统时间]]></title>
-    <link href="http://jp1017.github.io/2016/09/25/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8%E4%BF%AE%E6%94%B9%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/"/>
-    <id>http://jp1017.github.io/2016/09/25/安卓应用修改系统时间/</id>
+    <link href="http://jp1017.top/2016/09/25/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8%E4%BF%AE%E6%94%B9%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/"/>
+    <id>http://jp1017.top/2016/09/25/安卓应用修改系统时间/</id>
     <published>2016-09-25T12:40:12.000Z</published>
     <updated>2016-09-26T10:41:33.803Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/127578853/m%3D2048/3e76397841f23f0bcb16c5e1fa523046" alt="每日一景"></p>
 <h1 id="前言">前言</h1><hr>
 <p>通常，我们来获取系统时间来做一些事情，那么，如何设置系统时间呢？</p>
@@ -685,21 +685,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://jp1017.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/tags/Android/"/>
     
-      <category term="系统时间" scheme="http://jp1017.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/"/>
+      <category term="系统时间" scheme="http://jp1017.top/tags/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/"/>
     
-      <category term="Android" scheme="http://jp1017.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[USB摄像头预览识别二维码]]></title>
-    <link href="http://jp1017.github.io/2016/09/15/USB%E6%91%84%E5%83%8F%E5%A4%B4%E9%A2%84%E8%A7%88%E8%AF%86%E5%88%AB%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
-    <id>http://jp1017.github.io/2016/09/15/USB摄像头预览识别二维码/</id>
+    <link href="http://jp1017.top/2016/09/15/USB%E6%91%84%E5%83%8F%E5%A4%B4%E9%A2%84%E8%A7%88%E8%AF%86%E5%88%AB%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
+    <id>http://jp1017.top/2016/09/15/USB摄像头预览识别二维码/</id>
     <published>2016-09-15T08:51:43.000Z</published>
     <updated>2016-09-26T10:26:44.579Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/114230539/m%3D2048/6ebd8909ba23a7570389e1ecc5ab39ac" alt="每日一景"></p>
 <h2 id="前言">前言</h2><hr>
 <p>二维码现在用的超级多，其实它就是一种编码，把字符串编码保存成一个图片，我们扫描图片得到字符串就解码成功。</p>
@@ -785,23 +785,23 @@
     
     </summary>
     
-      <category term="Android" scheme="http://jp1017.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/tags/Android/"/>
     
-      <category term="USB摄像头" scheme="http://jp1017.github.io/tags/USB%E6%91%84%E5%83%8F%E5%A4%B4/"/>
+      <category term="USB摄像头" scheme="http://jp1017.top/tags/USB%E6%91%84%E5%83%8F%E5%A4%B4/"/>
     
-      <category term="二维码" scheme="http://jp1017.github.io/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
+      <category term="二维码" scheme="http://jp1017.top/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
     
-      <category term="Android" scheme="http://jp1017.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[安卓开发之屏蔽按键抖动，连击，长按事件]]></title>
-    <link href="http://jp1017.github.io/2016/08/28/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E4%B9%8B%E5%B1%8F%E8%94%BD%E6%8C%89%E9%94%AE%E6%8A%96%E5%8A%A8%EF%BC%8C%E8%BF%9E%E5%87%BB%EF%BC%8C%E9%95%BF%E6%8C%89%E4%BA%8B%E4%BB%B6/"/>
-    <id>http://jp1017.github.io/2016/08/28/安卓开发之屏蔽按键抖动，连击，长按事件/</id>
+    <link href="http://jp1017.top/2016/08/28/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E4%B9%8B%E5%B1%8F%E8%94%BD%E6%8C%89%E9%94%AE%E6%8A%96%E5%8A%A8%EF%BC%8C%E8%BF%9E%E5%87%BB%EF%BC%8C%E9%95%BF%E6%8C%89%E4%BA%8B%E4%BB%B6/"/>
+    <id>http://jp1017.top/2016/08/28/安卓开发之屏蔽按键抖动，连击，长按事件/</id>
     <published>2016-08-28T12:45:43.000Z</published>
     <updated>2016-08-28T13:36:25.573Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/70950171/m%3D2048/25f837d354504c2a249d46a740905e36" alt="每日一景"></p>
 <h1 id="缘由">缘由</h1><hr>
 <p>今天来个小知识点，也许遇到的人不多，但还是记录下。现在安卓机很少有实体键，老罗的情怀也只剩下一丝丝。但是除去手机，其他一些设备，比如电视，盒子等很多还有实体键，那么实体键在按下后就有一些问题，“抖动”和“连击”。</p>
@@ -842,21 +842,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://jp1017.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/tags/Android/"/>
     
-      <category term="事件" scheme="http://jp1017.github.io/tags/%E4%BA%8B%E4%BB%B6/"/>
+      <category term="事件" scheme="http://jp1017.top/tags/%E4%BA%8B%E4%BB%B6/"/>
     
-      <category term="Android" scheme="http://jp1017.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[ViewPager 嵌套百度地图事件冲突的解决方法]]></title>
-    <link href="http://jp1017.github.io/2016/07/28/ViewPager-%E5%B5%8C%E5%A5%97%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E4%BA%8B%E4%BB%B6%E5%86%B2%E7%AA%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>http://jp1017.github.io/2016/07/28/ViewPager-嵌套百度地图事件冲突的解决方法/</id>
+    <link href="http://jp1017.top/2016/07/28/ViewPager-%E5%B5%8C%E5%A5%97%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E4%BA%8B%E4%BB%B6%E5%86%B2%E7%AA%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://jp1017.top/2016/07/28/ViewPager-嵌套百度地图事件冲突的解决方法/</id>
     <published>2016-07-28T13:18:46.000Z</published>
     <updated>2016-08-02T13:45:04.148Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/72751293/m%3D2048/49a274baba6d51c1242995a4d4654c70" alt="每日一景"></p>
 <h1 id="问题">问题</h1><hr>
 <p>主 Activity 由一个自定义的 ViewPager 控制，包含多个 fragment，其中一个 fragment 包含一个百度地图 View，当左右滑动百度地图的时候，地图不动，只能望着 ViewPager 左右滑动的脚步而叹息，导致事件冲突。</p>
@@ -915,25 +915,25 @@
     
     </summary>
     
-      <category term="Android" scheme="http://jp1017.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/tags/Android/"/>
     
-      <category term="ViewPager" scheme="http://jp1017.github.io/tags/ViewPager/"/>
+      <category term="ViewPager" scheme="http://jp1017.top/tags/ViewPager/"/>
     
-      <category term="事件分发" scheme="http://jp1017.github.io/tags/%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91/"/>
+      <category term="事件分发" scheme="http://jp1017.top/tags/%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91/"/>
     
-      <category term="百度地图" scheme="http://jp1017.github.io/tags/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/"/>
+      <category term="百度地图" scheme="http://jp1017.top/tags/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/"/>
     
-      <category term="Android" scheme="http://jp1017.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Android Studio 引用系统 jar 包的正确姿势]]></title>
-    <link href="http://jp1017.github.io/2016/07/11/Android-Studio-%E5%BC%95%E7%94%A8%E7%B3%BB%E7%BB%9F-jar-%E5%8C%85%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/"/>
-    <id>http://jp1017.github.io/2016/07/11/Android-Studio-引用系统-jar-包的正确姿势/</id>
+    <link href="http://jp1017.top/2016/07/11/Android-Studio-%E5%BC%95%E7%94%A8%E7%B3%BB%E7%BB%9F-jar-%E5%8C%85%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/"/>
+    <id>http://jp1017.top/2016/07/11/Android-Studio-引用系统-jar-包的正确姿势/</id>
     <published>2016-07-11T09:46:59.000Z</published>
     <updated>2016-07-11T10:31:34.778Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/118785927/m%3D2048/51dda482036d6d91f2902406c3e8f41f" alt="每日一景"></p>
 <p>Android Studio 如何引用 jar 包，相信大家都会操作的，现在问题来了，对于系统里的 jar，比如 framework.jar该如何配置呢？</p>
 <p>这里来个简单的需求吧，我们自己编译系统，并且有串口驱动，该驱动有提供 so 和 jar。这些文件配置到系统里面，当jar更新，api 不变的话，只要更新系统就可以，而应用程序可以不变而采用系统最新的 jar 包。</p>
@@ -984,21 +984,21 @@
     
     </summary>
     
-      <category term="Android Studio" scheme="http://jp1017.github.io/tags/Android-Studio/"/>
+      <category term="Android Studio" scheme="http://jp1017.top/tags/Android-Studio/"/>
     
-      <category term="jar" scheme="http://jp1017.github.io/tags/jar/"/>
+      <category term="jar" scheme="http://jp1017.top/tags/jar/"/>
     
-      <category term="Android Studio" scheme="http://jp1017.github.io/categories/Android-Studio/"/>
+      <category term="Android Studio" scheme="http://jp1017.top/categories/Android-Studio/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[jni 开发错误之 java.lang.UnsatisfiedLinkError: dlopen failed: cannot locate symbol tcgetattr referenced by libserial_port.so...]]></title>
-    <link href="http://jp1017.github.io/2016/06/30/jni-%E5%BC%80%E5%8F%91%E9%94%99%E8%AF%AF%E4%B9%8B-java-lang-UnsatisfiedLinkError-dlopen-failed-cannot-locate-symbol-tcgetattr-referenced-by-libserial-port-so/"/>
-    <id>http://jp1017.github.io/2016/06/30/jni-开发错误之-java-lang-UnsatisfiedLinkError-dlopen-failed-cannot-locate-symbol-tcgetattr-referenced-by-libserial-port-so/</id>
+    <link href="http://jp1017.top/2016/06/30/jni-%E5%BC%80%E5%8F%91%E9%94%99%E8%AF%AF%E4%B9%8B-java-lang-UnsatisfiedLinkError-dlopen-failed-cannot-locate-symbol-tcgetattr-referenced-by-libserial-port-so/"/>
+    <id>http://jp1017.top/2016/06/30/jni-开发错误之-java-lang-UnsatisfiedLinkError-dlopen-failed-cannot-locate-symbol-tcgetattr-referenced-by-libserial-port-so/</id>
     <published>2016-06-30T01:12:57.000Z</published>
     <updated>2016-06-30T10:10:32.336Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/133812917/m%3D2048/d7dab63e94897ec0ede8d33f5fdbb33f" alt="每日一景"></p>
 <p>昨天把串口的驱动代码重新编译下，出现了问题：</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java<span class="class">.lang</span><span class="class">.UnsatisfiedLinkError</span>: dlopen failed: cannot locate symbol tcgetattr referenced by libserial_port<span class="class">.so</span>...</span><br></pre></td></tr></table></figure>
@@ -1042,21 +1042,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://jp1017.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/tags/Android/"/>
     
-      <category term="jni" scheme="http://jp1017.github.io/tags/jni/"/>
+      <category term="jni" scheme="http://jp1017.top/tags/jni/"/>
     
-      <category term="Android" scheme="http://jp1017.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Android Studio clean 时产生 Error:Execution failed for task ':app:mockableAndroidJar' > java.lang.NullPointerException (no error message) ]]></title>
-    <link href="http://jp1017.github.io/2016/06/22/Android-Studio-clean-%E6%97%B6%E4%BA%A7%E7%94%9F-Error-Execution-failed-for-task-app-mockableAndroidJar%20java.lang.NullPointerException%20(no%20error%20message)/"/>
-    <id>http://jp1017.github.io/2016/06/22/Android-Studio-clean-时产生-Error-Execution-failed-for-task-app-mockableAndroidJar java.lang.NullPointerException (no error message)/</id>
+    <link href="http://jp1017.top/2016/06/22/Android-Studio-clean-%E6%97%B6%E4%BA%A7%E7%94%9F-Error-Execution-failed-for-task-app-mockableAndroidJar%20java.lang.NullPointerException%20(no%20error%20message)/"/>
+    <id>http://jp1017.top/2016/06/22/Android-Studio-clean-时产生-Error-Execution-failed-for-task-app-mockableAndroidJar java.lang.NullPointerException (no error message)/</id>
     <published>2016-06-22T06:33:48.000Z</published>
     <updated>2016-12-03T05:53:40.422Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/125301449/m%3D2048/ba230b1d36c2b50d2b7af57be81c94e7" alt="每日一景"></p>
 <h2 id="20161203更新">20161203更新</h2><p>已经确认这个错误是这个神器的锅: <a href="https://github.com/anggrayudi/android-hidden-api" target="_blank" rel="external">android-hidden-api</a></p>
 <p>在Android Studio　2.2.2上使用时，已经没有了上面的试验选项，那么该如何解决呢，在这个issue得到了解决：</p>
@@ -1113,19 +1113,19 @@
     
     </summary>
     
-      <category term="Android Studio" scheme="http://jp1017.github.io/tags/Android-Studio/"/>
+      <category term="Android Studio" scheme="http://jp1017.top/tags/Android-Studio/"/>
     
-      <category term="Android Studio" scheme="http://jp1017.github.io/categories/Android-Studio/"/>
+      <category term="Android Studio" scheme="http://jp1017.top/categories/Android-Studio/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[工作两年的所思所想所感]]></title>
-    <link href="http://jp1017.github.io/2016/06/17/%E5%B7%A5%E4%BD%9C%E4%B8%A4%E5%B9%B4%E7%9A%84%E6%89%80%E6%80%9D%E6%89%80%E6%83%B3%E6%89%80%E6%84%9F/"/>
-    <id>http://jp1017.github.io/2016/06/17/工作两年的所思所想所感/</id>
+    <link href="http://jp1017.top/2016/06/17/%E5%B7%A5%E4%BD%9C%E4%B8%A4%E5%B9%B4%E7%9A%84%E6%89%80%E6%80%9D%E6%89%80%E6%83%B3%E6%89%80%E6%84%9F/"/>
+    <id>http://jp1017.top/2016/06/17/工作两年的所思所想所感/</id>
     <published>2016-06-17T11:12:54.000Z</published>
     <updated>2016-07-17T08:50:11.030Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/128367049/m%3D2048/22c18e45fdc811068ade2819b6a7316a" alt="每日一景"></p>
 <h1 id="写作缘由">写作缘由</h1><hr>
 <p>今天早上跑步结束后压腿，发现身体柔韧性严重下降，又想起崂山25公里越野后教练帮我拉伸时说我身体柔韧性不错，然后想了很多，也正好毕业工作两年了，借此总结一下，发现也很久没输出了，是时候了，Ok, Let’s begin。</p>
@@ -1183,11 +1183,11 @@
   
   <entry>
     <title><![CDATA[EventBus3 简单使用及注意点]]></title>
-    <link href="http://jp1017.github.io/2016/05/31/EventBus3-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E5%8F%8A%E6%B3%A8%E6%84%8F%E7%82%B9/"/>
-    <id>http://jp1017.github.io/2016/05/31/EventBus3-简单使用及注意点/</id>
+    <link href="http://jp1017.top/2016/05/31/EventBus3-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E5%8F%8A%E6%B3%A8%E6%84%8F%E7%82%B9/"/>
+    <id>http://jp1017.top/2016/05/31/EventBus3-简单使用及注意点/</id>
     <published>2016-05-31T12:18:56.000Z</published>
     <updated>2016-09-07T02:36:08.019Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/123793911/m%3D2048/4e76af7e11bbf3693469c952f0fc21d4" alt="每日一景"></p>
 <h1 id="EventBus3_简介">EventBus3 简介</h1><hr>
 <p>EventBus Android 发布/订阅事件总线，可简化 Activities, Fragments, Threads, Services 等组件间的消息传递，可替代 Intent, Handler, BroadCast ，接口等传统方案，更快，代码更小，50K 左右的 jar 包，代码更优雅，彻底解耦。EventBus3 是最新版本，官网地址：</p>
@@ -1259,21 +1259,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://jp1017.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/tags/Android/"/>
     
-      <category term="EventBus3" scheme="http://jp1017.github.io/tags/EventBus3/"/>
+      <category term="EventBus3" scheme="http://jp1017.top/tags/EventBus3/"/>
     
-      <category term="Android" scheme="http://jp1017.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[安卓定位及坐标转换]]></title>
-    <link href="http://jp1017.github.io/2016/05/23/%E5%AE%89%E5%8D%93%E5%AE%9A%E4%BD%8D%E5%8F%8A%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/"/>
-    <id>http://jp1017.github.io/2016/05/23/安卓定位及坐标转换/</id>
+    <link href="http://jp1017.top/2016/05/23/%E5%AE%89%E5%8D%93%E5%AE%9A%E4%BD%8D%E5%8F%8A%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/"/>
+    <id>http://jp1017.top/2016/05/23/安卓定位及坐标转换/</id>
     <published>2016-05-23T03:53:07.000Z</published>
     <updated>2016-05-23T12:01:47.076Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="https://drscdn.500px.org/photo/52296484/m%3D2048/9a5810ef6b98956873f114635371e9c3" alt="每日一景"></p>
 <h2 id="定位">定位</h2><hr>
 <p>需要添加位置权限，这里有两个：</p>
@@ -1385,21 +1385,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://jp1017.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/tags/Android/"/>
     
-      <category term="定位" scheme="http://jp1017.github.io/tags/%E5%AE%9A%E4%BD%8D/"/>
+      <category term="定位" scheme="http://jp1017.top/tags/%E5%AE%9A%E4%BD%8D/"/>
     
-      <category term="Android" scheme="http://jp1017.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://jp1017.top/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[ubuntu 下常用软件及主题推荐]]></title>
-    <link href="http://jp1017.github.io/2016/04/25/ubuntu-%E4%B8%8B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%8F%8A%E4%B8%BB%E9%A2%98%E6%8E%A8%E8%8D%90/"/>
-    <id>http://jp1017.github.io/2016/04/25/ubuntu-下常用软件及主题推荐/</id>
+    <link href="http://jp1017.top/2016/04/25/ubuntu-%E4%B8%8B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%8F%8A%E4%B8%BB%E9%A2%98%E6%8E%A8%E8%8D%90/"/>
+    <id>http://jp1017.top/2016/04/25/ubuntu-下常用软件及主题推荐/</id>
     <published>2016-04-25T06:18:08.000Z</published>
     <updated>2016-10-14T12:27:14.483Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="http://7xlah4.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160425080309.jpg" alt="每日一景"></p>
 <h1 id="常用软件">常用软件</h1><hr>
 <p>大部分软件都可在软件中心找到，16.04叫 Ubuntu Software</p>
@@ -1463,19 +1463,19 @@
     
     </summary>
     
-      <category term="ubuntu" scheme="http://jp1017.github.io/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="http://jp1017.top/tags/ubuntu/"/>
     
-      <category term="ubuntu" scheme="http://jp1017.github.io/categories/ubuntu/"/>
+      <category term="ubuntu" scheme="http://jp1017.top/categories/ubuntu/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[java 基本数据类型及数组使用集锦]]></title>
-    <link href="http://jp1017.github.io/2016/04/13/java-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%95%B0%E7%BB%84%E4%BD%BF%E7%94%A8%E9%9B%86%E5%90%88/"/>
-    <id>http://jp1017.github.io/2016/04/13/java-基本数据类型及数组使用集合/</id>
+    <link href="http://jp1017.top/2016/04/13/java-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%95%B0%E7%BB%84%E4%BD%BF%E7%94%A8%E9%9B%86%E5%90%88/"/>
+    <id>http://jp1017.top/2016/04/13/java-基本数据类型及数组使用集合/</id>
     <published>2016-04-13T02:12:34.000Z</published>
     <updated>2016-06-07T06:16:08.359Z</updated>
-    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+    <content type="html"><![CDATA[<p>博客：    <a href="http://jp1017.github.io/" target="_blank" rel="external">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
 <p><img src="http://7xlah4.com1.z0.glb.clouddn.com/20160419103518.jpg" alt="每日一景"></p>
 <h1 id="Arrays-copyOf与System-arrayCopy">Arrays.copyOf与System.arrayCopy</h1><hr>
 <p>数组拷贝，有Arrays.copyOf与System.arrayCopy，区别是System.arraycopy要求你必须提供一个目标数组，而Arrays.copyOf不用你提提供目标数组，其内部实现就是用的 System.arrayCopy</p>
