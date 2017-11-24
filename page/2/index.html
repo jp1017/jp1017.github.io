@@ -270,6 +270,82 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-ubuntu-下常用软件及主题推荐" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/25/ubuntu-下常用软件及主题推荐/" class="article-date">
+      <time datetime="2016-04-25T06:18:08.000Z" itemprop="datePublished">2016-04-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/25/ubuntu-下常用软件及主题推荐/">ubuntu 下常用软件及主题推荐</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles">追风917</a></p>
+<p><img src="http://7xlah4.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160425080309.jpg" alt="每日一景"></p>
+<h1 id="常用软件">常用软件</h1><hr>
+<p>大部分软件都可在软件中心找到，16.04叫 Ubuntu Software</p>
+<ol>
+<li>新立得软件包管理器 synaptic</li>
+<li>vlc 多媒体播放程序</li>
+<li>GParted 分区编辑器</li>
+<li>ubuntu 额外的版权受限程序</li>
+<li>聊天 qq</li>
+</ol>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/ubuntu/">ubuntu</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2016/04/25/ubuntu-下常用软件及主题推荐/#more">查看全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-安卓应用修改系统时间" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -895,80 +971,6 @@
       
         <p class="article-more-link">
           <a href="/2015/12/20/常用工具资源分类/#more">查看全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-jni-开发错误之-java-lang-UnsatisfiedLinkError-dlopen-failed-cannot-locate-symbol-tcgetattr-referenced-by-libserial-port-so" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/30/jni-开发错误之-java-lang-UnsatisfiedLinkError-dlopen-failed-cannot-locate-symbol-tcgetattr-referenced-by-libserial-port-so/" class="article-date">
-      <time datetime="2016-06-30T01:12:57.000Z" itemprop="datePublished">2016-06-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/30/jni-开发错误之-java-lang-UnsatisfiedLinkError-dlopen-failed-cannot-locate-symbol-tcgetattr-referenced-by-libserial-port-so/">jni 开发错误之 java.lang.UnsatisfiedLinkError: dlopen failed: cannot locate symbol tcgetattr referenced by libserial_port.so...</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>博客：    <a href="http://jp1017.github.io/">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles">追风917</a></p>
-<p><img src="https://drscdn.500px.org/photo/133812917/m%3D2048/d7dab63e94897ec0ede8d33f5fdbb33f" alt="每日一景"></p>
-<p>昨天把串口的驱动代码重新编译下，出现了问题：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java<span class="class">.lang</span><span class="class">.UnsatisfiedLinkError</span>: dlopen failed: cannot locate symbol tcgetattr referenced by libserial_port<span class="class">.so</span>...</span><br></pre></td></tr></table></figure>
-<p>一般 jni 开发的话，C 代码命名常出错，检查了下，是 OK 的，然后 google了下，发现基本就下面两个：</p>
-<p><a href="http://www.eoeandroid.com/thread-914514-1-1.html">[Android 调试] android串口通信问题，基于android studio</a><br><a href="https://stackoverflow.com/questions/35080172/ndk-unsatisfiedlinkerror-when-lowering-project-api-level-21-to-19/38112597#38112597">NDK UnsatisfiedLinkError when lowering project api level 21 to 19</a></p>
-<p>而 stackoverflow 的哥们 rebuild 就好了，我各种折腾也不见好呐，于是看到上一篇 eoe 的，给了我思路：</p>
-<p>我们看下包含该函数 <code>**tcgetattr**</code> 的文件， 比较下 NDK api 19 和 23 的 <code>termios.h</code> 文件：</p>
-<p>23 的该文件目录：<code>D:\Android\Sdk\ndk-bundle\platforms\android-23\arch-arm\usr\include</code></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jni/">jni</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/06/30/jni-开发错误之-java-lang-UnsatisfiedLinkError-dlopen-failed-cannot-locate-symbol-tcgetattr-referenced-by-libserial-port-so/#more">查看全文 >></a>
         </p>
       
       <div class="clearfix"></div>

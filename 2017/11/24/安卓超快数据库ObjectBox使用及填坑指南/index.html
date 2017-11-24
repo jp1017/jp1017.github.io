@@ -9,35 +9,29 @@
 
   <meta charset="utf-8">
   
-  <title>聊聊老罗锤子便签里的Markdown | 安卓那些事儿</title>
+  <title>安卓超快数据库ObjectBox使用及填坑指南 | 安卓那些事儿</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="博客：    安卓之家微博：    追风917CSDN：    蒋朋的家简书：    追风917博客园：    追风917
-前言
-前几天锤子手机发布会，老罗提到了其新版便签里支持Markdown模式，这究竟是个什么玩意，和我到底有多大关系，下面就来聊聊：
-首先本文就是用Markdown模式写成的
-然后你现在看到的简书应用也有Markdown模式，不得不说简书的开发者用心，昨天反馈了几个问题，今天都">
+  <meta name="description" content="博客：    安卓之家掘金：    jp1017微博：    追风917CSDN：    蒋朋的家简书：    追风917
+
+ObjectBox是什么前几天升级 EventBus的时候, 看到了 ObjectBox, 然后进去看了下, 发现这是一个超级快的数据库, 于是在项目里进行了集成, 踩了一些坑, 下面一一介绍.
+1 greenDAO 作者另一力作, 超快的数据库: http://objec">
 <meta property="og:type" content="article">
-<meta property="og:title" content="聊聊老罗锤子便签里的Markdown">
-<meta property="og:url" content="http://jp1017.top/2015/12/20/聊聊老罗锤子便签里的Markdown/index.html">
+<meta property="og:title" content="安卓超快数据库ObjectBox使用及填坑指南">
+<meta property="og:url" content="http://jp1017.top/2017/11/24/安卓超快数据库ObjectBox使用及填坑指南/index.html">
 <meta property="og:site_name" content="安卓那些事儿">
-<meta property="og:description" content="博客：    安卓之家微博：    追风917CSDN：    蒋朋的家简书：    追风917博客园：    追风917
-前言
-前几天锤子手机发布会，老罗提到了其新版便签里支持Markdown模式，这究竟是个什么玩意，和我到底有多大关系，下面就来聊聊：
-首先本文就是用Markdown模式写成的
-然后你现在看到的简书应用也有Markdown模式，不得不说简书的开发者用心，昨天反馈了几个问题，今天都">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/746997-00aca97f3736f8d0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/746997-f923929a020c3995.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/746997-70d96e920deb2a4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/746997-9d1b328c68b2ee94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/746997-93a951f6e2350ecd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2015-12-20T08:35:59.143Z">
+<meta property="og:description" content="博客：    安卓之家掘金：    jp1017微博：    追风917CSDN：    蒋朋的家简书：    追风917
+
+ObjectBox是什么前几天升级 EventBus的时候, 看到了 ObjectBox, 然后进去看了下, 发现这是一个超级快的数据库, 于是在项目里进行了集成, 踩了一些坑, 下面一一介绍.
+1 greenDAO 作者另一力作, 超快的数据库: http://objec">
+<meta property="og:image" content="https://farm4.staticflickr.com/3315/3486842841_d78a545ff2_o.jpg">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/17/15fc893cd7d72676?w=480&h=800&f=png&s=48553">
+<meta property="og:updated_time" content="2017-11-24T10:06:48.441Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="聊聊老罗锤子便签里的Markdown">
-<meta name="twitter:description" content="博客：    安卓之家微博：    追风917CSDN：    蒋朋的家简书：    追风917博客园：    追风917
-前言
-前几天锤子手机发布会，老罗提到了其新版便签里支持Markdown模式，这究竟是个什么玩意，和我到底有多大关系，下面就来聊聊：
-首先本文就是用Markdown模式写成的
-然后你现在看到的简书应用也有Markdown模式，不得不说简书的开发者用心，昨天反馈了几个问题，今天都">
+<meta name="twitter:title" content="安卓超快数据库ObjectBox使用及填坑指南">
+<meta name="twitter:description" content="博客：    安卓之家掘金：    jp1017微博：    追风917CSDN：    蒋朋的家简书：    追风917
+
+ObjectBox是什么前几天升级 EventBus的时候, 看到了 ObjectBox, 然后进去看了下, 发现这是一个超级快的数据库, 于是在项目里进行了集成, 踩了一些坑, 下面一一介绍.
+1 greenDAO 作者另一力作, 超快的数据库: http://objec">
   
     <link rel="alternative" href="/atom.xml" title="安卓那些事儿" type="application/atom+xml">
   
@@ -281,11 +275,11 @@
     </div>
     <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
 </nav>
-      <div class="body-wrap"><article id="post-聊聊老罗锤子便签里的Markdown" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-安卓超快数据库ObjectBox使用及填坑指南" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/20/聊聊老罗锤子便签里的Markdown/" class="article-date">
-      <time datetime="2015-12-20T08:35:06.000Z" itemprop="datePublished">2015-12-20</time>
+      <a href="/2017/11/24/安卓超快数据库ObjectBox使用及填坑指南/" class="article-date">
+      <time datetime="2017-11-24T10:01:04.000Z" itemprop="datePublished">2017-11-24</time>
 </a>
     </div>
   
@@ -298,7 +292,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      聊聊老罗锤子便签里的Markdown
+      安卓超快数据库ObjectBox使用及填坑指南
     </h1>
   
 
@@ -307,13 +301,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Markdown/">Markdown</a>
+    <a class="article-category-link" href="/categories/Android/">Android</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -323,50 +317,59 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>博客：    <a href="http://jp1017.gitcafe.io/" target="_blank" rel="external">安卓之家</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a><br>博客园：    <a href="http://www.cnblogs.com/jp1017/" target="_blank" rel="external">追风917</a></p>
-<h1 id="前言">前言</h1><hr>
-<p>前几天锤子手机发布会，老罗提到了其新版便签里支持Markdown模式，这究竟是个什么玩意，和我到底有多大关系，下面就来聊聊：</p>
-<p>首先本文就是用Markdown模式写成的</p>
-<p>然后你现在看到的简书应用也有Markdown模式，不得不说简书的开发者用心，昨天反馈了几个问题，今天都得到完美解答，修复bug也杠杠的，赞一个^_^</p>
+        <p>博客：    <a href="http://jp1017.top/">安卓之家</a><br>掘金：    <a href="http://gold.xitu.io/user/5675e9d560b2f42a127e4916" target="_blank" rel="external">jp1017</a><br>微博：    <a href="http://weibo.com/1321395433/profile?topnav=1&amp;wvr=6" target="_blank" rel="external">追风917</a><br>CSDN：    <a href="http://blog.csdn.net/u010331406" target="_blank" rel="external">蒋朋的家</a><br>简书：    <a href="http://www.jianshu.com/users/8cb49b5ad78b/latest_articles" target="_blank" rel="external">追风917</a></p>
+<p><img src="https://farm4.staticflickr.com/3315/3486842841_d78a545ff2_o.jpg" alt="每日一景"></p>
+<h2 id="ObjectBox是什么">ObjectBox是什么</h2><p>前几天升级 <code>EventBus</code>的时候, 看到了 <code>ObjectBox</code>, 然后进去看了下, 发现这是一个超级快的数据库, 于是在项目里进行了集成, 踩了一些坑, 下面一一介绍.</p>
+<p>1 greenDAO 作者另一力作, 超快的数据库: <a href="http://objectbox.io/" target="_blank" rel="external">http://objectbox.io/</a><br>2 还是快, 对sqlite, realm, greenDAO, room堪称碾压: <a href="https://github.com/objectbox/objectbox-performance" target="_blank" rel="external">https://github.com/objectbox/objectbox-performance</a><br>下面是在坚果pro上操作200000条数据的结果：</p>
 <a id="more"></a>
-<p><img src="http://upload-images.jianshu.io/upload_images/746997-00aca97f3736f8d0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="20150827SmartisanWebShareFinal.jpg"></p>
-<h1 id="Markdown是什么">Markdown是什么</h1><hr>
-<p>Markdown 是一种轻量级标记语言，创始人为约翰·格鲁伯（John Gruber）。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档”。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。以上来自<a href="https://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="external">维基百科</a>。</p>
-<p>Markdown 是一种使用纯文本编写的标记语言，它能使文本拥有丰富的页面排版效果。<br>通过键盘上方出现的 Markdown 语法快捷输入条，用户可以设置标题、文本居中、字体加粗、引用，以及生成列表。当用户将此篇文章生成图片或网页时就会识别文本中的 Markdown 语法，从而实现更优雅的页面效果。以上是<a href="http://www.wandoujia.com/campaign/applaunch?pn=com.smartisan.notes&amp;utm_source=channel&amp;utm_medium=promotion&amp;utm_campaign=applaunch-com.smartisan.notes" target="_blank" rel="external">豌豆荚</a>上锤子便签的说明，还提供下载。</p>
-<p>使用github的朋友应该不会陌生，也许正是github让这种写作模式流行，很不幸的是，最近这只猫过的很不愉快。。。</p>
-<h1 id="Markdown有什么用">Markdown有什么用</h1><hr>
-<p>Markdown还是一种小众的编写方式，但是她的编写效率很高，没有office那样复杂的格式，也就是说你不用为你的格式浪费太多时间，专注于你的写作变的如此简单易行。</p>
-<p>可以导出 HTML、PDF 和本身的 .md 文件。</p>
-<h1 id="Markdown语法">Markdown语法</h1><hr>
-<p>关于Markdown的使用，当然要学习下她的语法，很简单，三五分钟你就可以搞定，这个很多地方都有介绍，推荐这里：<a href="http://www.appinn.com/markdown/" target="_blank" rel="external">Markdown 语法说明</a></p>
-<p>还有简书里的这个：<a href="http://www.jianshu.com/p/q81RER" target="_blank" rel="external">献给写作者的 Markdown新手指南</a></p>
-<h1 id="Markdown编辑器">Markdown编辑器</h1><hr>
-<p>google一下，这个编译器非常多，这里给出几个常用的</p>
-<ul>
-<li><p>老罗锤子便签<br>移动端写作的还是少数吧，当然了出个门还是需要的。</p>
-</li>
-<li><p>MarkdownX<br>这个也是移动端，这里有介绍：<a href="http://sspai.com/30800" target="_blank" rel="external">专注移动端 Markdown 写作的优秀应用</a></p>
-</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/746997-f923929a020c3995.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screenshot_2015-08-27-20-27-01.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/746997-70d96e920deb2a4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screenshot_2015-08-27-20-27-05.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/746997-9d1b328c68b2ee94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screenshot_2015-08-27-20-27-19.png"></p>
-<p>刚试用了下，还是不错的，左滑即可实时预览，平时记录够用了。还有语法参考，很贴心哦！</p>
-<ul>
-<li>Mado 这个是谷歌浏览器的一个插件，用起来还是很棒的</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/746997-93a951f6e2350ecd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="20150827mado.jpg"></p>
-<ul>
-<li><p>Notepad++ 本文就是用这个编辑的，需要下载一个插件NppMarkdown，点我下载。</p>
-</li>
-<li><p>小书匠 这里是<a href="http://markdown.xiaoshujiang.com/" target="_blank" rel="external">官方网站</a>，可在线编写，也有提供安装包下载。</p>
-</li>
-<li><p>MarkdownPad 这个使用的人数很多的吧，<a href="http://markdownpad.com/" target="_blank" rel="external">我是官网</a></p>
-</li>
-</ul>
-<ul>
-<li>其他，请来这里寻找你需要的：<a href="http://code.csdn.net/news/2819623" target="_blank" rel="external">10款流行的Markdown编辑器，总有一款适合你</a></li>
-</ul>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">Starting tests with <span class="number">200000</span> entities at Mon Nov <span class="number">20</span> <span class="number">09</span>:<span class="number">35</span>:<span class="number">31</span> GMT+<span class="number">08</span>:<span class="number">00</span> <span class="number">2017</span></span><br><span class="line"></span><br><span class="line">ObjectBox Basic <span class="keyword">operations</span> (CRUD) (<span class="number">1</span>/<span class="number">1</span>)</span><br><span class="line">------------------------------</span><br><span class="line">ObjectBox <span class="number">1.2</span>.<span class="number">0</span>-<span class="number">2017</span>-<span class="number">10</span>-<span class="number">31</span></span><br><span class="line">insert: <span class="number">2635</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">2006</span> ms)</span><br><span class="line">update: <span class="number">2577</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">2155</span> ms)</span><br><span class="line">load: <span class="number">1838</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">1811</span> ms)</span><br><span class="line">access: <span class="number">100</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">98</span> ms)</span><br><span class="line">delete: <span class="number">570</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">539</span> ms)</span><br><span class="line"></span><br><span class="line">Tests done at Mon Nov <span class="number">20</span> <span class="number">09</span>:<span class="number">35</span>:<span class="number">45</span> GMT+<span class="number">08</span>:<span class="number">00</span> <span class="number">2017</span></span><br><span class="line">Starting tests with <span class="number">200000</span> entities at Mon Nov <span class="number">20</span> <span class="number">09</span>:<span class="number">35</span>:<span class="number">45</span> GMT+<span class="number">08</span>:<span class="number">00</span> <span class="number">2017</span></span><br><span class="line"></span><br><span class="line">Realm Basic <span class="keyword">operations</span> (CRUD) (<span class="number">1</span>/<span class="number">1</span>)</span><br><span class="line">------------------------------</span><br><span class="line">insert: <span class="number">11395</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">10308</span> ms)</span><br><span class="line">update: <span class="number">6757</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">5998</span> ms)</span><br><span class="line">load: <span class="number">11</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">4</span> ms)</span><br><span class="line">access: <span class="number">6656</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">6542</span> ms)</span><br><span class="line">delete: <span class="number">2014</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">1930</span> ms)</span><br><span class="line"></span><br><span class="line">Tests done at Mon Nov <span class="number">20</span> <span class="number">09</span>:<span class="number">36</span>:<span class="number">17</span> GMT+<span class="number">08</span>:<span class="number">00</span> <span class="number">2017</span></span><br><span class="line">Starting tests with <span class="number">200000</span> entities at Mon Nov <span class="number">20</span> <span class="number">09</span>:<span class="number">36</span>:<span class="number">17</span> GMT+<span class="number">08</span>:<span class="number">00</span> <span class="number">2017</span></span><br><span class="line"></span><br><span class="line">greenDAO Basic <span class="keyword">operations</span> (CRUD) (<span class="number">1</span>/<span class="number">1</span>)</span><br><span class="line">------------------------------</span><br><span class="line">SQLite <span class="operator">version</span> <span class="number">3.9</span>.<span class="number">2</span></span><br><span class="line">insert: <span class="number">8452</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">8172</span> ms)</span><br><span class="line">update: <span class="number">12213</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">11024</span> ms)</span><br><span class="line">load: <span class="number">9811</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">9729</span> ms)</span><br><span class="line">access: <span class="number">125</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">125</span> ms)</span><br><span class="line">delete: <span class="number">5302</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">4721</span> ms)</span><br><span class="line">DB deleted: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">Tests done at Mon Nov <span class="number">20</span> <span class="number">09</span>:<span class="number">36</span>:<span class="number">59</span> GMT+<span class="number">08</span>:<span class="number">00</span> <span class="number">2017</span></span><br><span class="line">Starting tests with <span class="number">200000</span> entities at Mon Nov <span class="number">20</span> <span class="number">09</span>:<span class="number">36</span>:<span class="number">59</span> GMT+<span class="number">08</span>:<span class="number">00</span> <span class="number">2017</span></span><br><span class="line"></span><br><span class="line">Room Basic <span class="keyword">operations</span> (CRUD) (<span class="number">1</span>/<span class="number">1</span>)</span><br><span class="line">------------------------------</span><br><span class="line">SQLite <span class="operator">version</span> <span class="number">3.9</span>.<span class="number">2</span></span><br><span class="line">insert: <span class="number">9553</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">9144</span> ms)</span><br><span class="line">update: <span class="number">13038</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">11900</span> ms)</span><br><span class="line">load: <span class="number">9398</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">9316</span> ms)</span><br><span class="line">access: <span class="number">119</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">115</span> ms)</span><br><span class="line">delete: <span class="number">6137</span> <span class="keyword">ms</span> <span class="title">(thread</span>: <span class="number">5665</span> ms)</span><br><span class="line">DB deleted: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">Tests done at Mon Nov <span class="number">20</span> <span class="number">09</span>:<span class="number">37</span>:<span class="number">43</span> GMT+<span class="number">08</span>:<span class="number">00</span> <span class="number">2017</span></span><br></pre></td></tr></table></figure>
+<p>3 完美支持 <code>Kotlin</code>: <a href="http://objectbox.io/documentation/kotlin/" target="_blank" rel="external">http://objectbox.io/documentation/kotlin/</a><br>4 接口简单, 使用方便, 可由 <code>greenDAO</code> 快速替换<br>5 提供响应式接口: <a href="http://objectbox.io/documentation/data-observers-reactive-extensions/" target="_blank" rel="external">http://objectbox.io/documentation/data-observers-reactive-extensions/</a><br>6 调试方便, 可在安卓手机及电脑端进行调试: <a href="http://objectbox.io/objectbox-1-1-introduces-data-browser/#more-31888" target="_blank" rel="external">http://objectbox.io/objectbox-1-1-introduces-data-browser/#more-31888</a></p>
+<h2 id="快速接入">快速接入</h2><p>demo我就不提供了, 官方有多个demo可供参考: <a href="https://github.com/objectbox/objectbox-examples" target="_blank" rel="external">https://github.com/objectbox/objectbox-examples</a><br>其中包括:</p>
+<ol>
+<li>objectbox-example: ObjectBox 基本使用, java</li>
+<li>objectbox-kotlin-example: ObjectBox Kotlin 使用</li>
+<li>daocompat-example: 对 <code>greenDAO</code> 的兼容</li>
+<li>objectbox-relation-example: 高级用法, 一对一, 一对多等</li>
+</ol>
+<p>接入很简单, 官方也有介绍: </p>
+<h3 id="Gradle_添加依赖">Gradle 添加依赖</h3><p>1 根gradle 添加远程仓库及仓库名</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    ext.objectboxVersion = <span class="string">'1.2.1'</span></span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; url <span class="string">"http://objectbox.net/beta-repo/"</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath <span class="string">"io.objectbox:objectbox-gradle-plugin:$objectboxVersion"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; url <span class="string">"http://objectbox.net/beta-repo/"</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2 app 下的 gradle 添加插件</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply <span class="string">plugin:</span> <span class="string">'io.objectbox'</span> <span class="comment">// 注意放到安卓插件后面</span></span><br></pre></td></tr></table></figure>
+<p>3 app 下的 gradle 添加依赖: </p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">debugCompile</span> <span class="string">'io.objectbox:objectbox-android-objectbrowser:1.2.1'</span></span><br><span class="line">releaseCompile <span class="string">'io.objectbox:objectbox-android:1.2.1'</span></span><br></pre></td></tr></table></figure>
+<h3 id="项目使用">项目使用</h3><p>1 先来一个数据类, 比如 <code>Student</code>, 用 <code>@Entity</code> 注解<br>2 在 <code>Application</code> 下获取一个 <code>BoxStore</code>:</p>
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">boxStore = <span class="type">MyObjectBox</span>.builder<span class="literal">()</span>.androidContext(this).build<span class="literal">()</span>;</span><br></pre></td></tr></table></figure>
+<p>3 然后获取进行增删改查的 <code>Box</code></p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Box&lt;Student&gt; </span><span class="keyword">box </span>= <span class="keyword">boxStore.boxFor(Student.class);</span></span><br></pre></td></tr></table></figure>
+<p>4 进行增删改查:  <code>put</code>, <code>get</code>, <code>remove</code>, and <code>query</code>.</p>
+<h2 id="填坑">填坑</h2><h3 id="找不到_MyObjectBox">找不到 <code>MyObjectBox</code></h3><p><strong>编译一下项目即可自动生成</strong></p>
+<h3 id="数据库保存到了哪里">数据库保存到了哪里</h3><p>默认保存位置在 <code>/data/data/包名/files/objectbox/data.mdb</code></p>
+<p>可以在 <code>BoxStore</code> 初始化的时候设置保存位置</p>
+<h3 id="ToMany_怎么使用">ToMany 怎么使用</h3><p>这里的 <code>ToMany</code> 继承自 <code>List</code>, 使用很方便, 参考这个demo:  <a href="https://github.com/objectbox/objectbox-examples/tree/master/objectbox-relation-example" target="_blank" rel="external">https://github.com/objectbox/objectbox-examples/tree/master/objectbox-relation-example</a></p>
+<h3 id="查询时设置查询个数">查询时设置查询个数</h3><p>使用 <code>Query.find(long offset, long limit)</code>, 参考这个issue: <a href="https://github.com/objectbox/objectbox-java/issues/250" target="_blank" rel="external">https://github.com/objectbox/objectbox-java/issues/250</a></p>
+<h3 id="找不到_“libobjectbox-so”">找不到 “libobjectbox.so”</h3><p>作者认为 <code>armeabi</code>　已经过时, 仅提供 <code>armeabi-v7a</code> 和 <code>arm64-v8a</code>的so, 请检查你的应用设置</p>
+<h3 id="升级">升级</h3><p>主要包括更改实体类名及实体类里的变量名或类型, 很简单, 要使用注解 <code>@Uid</code></p>
+<p>以更改实体类名为例:</p>
+<p>1 要更改的实体类添加注解 <code>@Uid</code><br>2 编译, 会报错, 点击as右下 <code>Gradle Console</code> 会有类似报错信息: </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">注: [ObjectBox] Starting ObjectBox processor (debug: false)</span><br><span class="line">错误: [ObjectBox] UID operations for property "LocationEntity.locationTime": [<span class="operator"><span class="keyword">Rename</span>] <span class="keyword">apply</span> the <span class="keyword">current</span> UID <span class="keyword">using</span> @Uid(<span class="number">3939342872662404404</span><span class="keyword">L</span>) - [<span class="keyword">Change</span>/<span class="keyword">reset</span>] <span class="keyword">apply</span> a <span class="keyword">new</span> UID <span class="keyword">using</span> @Uid(<span class="number">7349095691908173825</span><span class="keyword">L</span>)</span></span><br></pre></td></tr></table></figure>
+<p>3 把报错信息里后面一个新的数填写到注解里, 此处为:　<code>@Uid(3939342872662404404L)</code><br>4 更改你的类名, 编译即可完成</p>
+<h3 id="调试">调试</h3><p>1 配置你的gradle: </p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">dependencies</span> &#123;</span><br><span class="line">    <span class="title">debugCompile</span> <span class="string">"io.objectbox:objectbox-android-objectbrowser:<span class="variable">$objectboxVersion</span>"</span></span><br><span class="line">    releaseCompile <span class="string">"io.objectbox:objectbox-android:<span class="variable">$objectboxVersion</span>"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2  插件　｀apply plugin: ‘io.objectbox’｀　放到 gradle 文件最后一行</p>
+<p>3 <code>Application</code>　里打开调试信息: </p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> AndroidObjectBrowser(boxStore).start(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+<p>完成这两步, 编译运行后在通知栏会有个OB通知, 点击就可以在手机端浏览器查看数据库了…</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/11/17/15fc893cd7d72676?w=480&h=800&f=png&s=48553" width="320"></p>
+<p>如果在电脑查看还需要添加一步: </p>
+<p>4 在电脑终端执行一个　adb 命令: </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb forward tcp:<span class="number">8090</span> tcp:<span class="number">8090</span></span><br></pre></td></tr></table></figure>
+<p>这样打开网址　<a href="http://localhost:8090/index.html" target="_blank" rel="external">http://localhost:8090/index.html</a>　就可以查看数据库</p>
+<p>先到这里了, 有问题可以留言或者官方提 <code>issue</code>: <a href="https://github.com/objectbox/objectbox-java/issues" target="_blank" rel="external">https://github.com/objectbox/objectbox-java/issues</a></p>
+<p>Cooooooooooooooooooooool!</p>
+<p>最后，非常感谢您的阅读，有任何疑问，可以后面评论，谢谢！</p>
+<p>神奇的安卓开发网站：<a href="http://androidcat.com/" target="_blank" rel="external">http://androidcat.com/</a></p>
+<p>安卓开源库收集整理：<a href="https://github.com/XXApple/AndroidLibs" target="_blank" rel="external">https://github.com/XXApple/AndroidLibs</a></p>
 <p>分享是一种美德，更是一种生活方式！！</p>
 <blockquote>
 <p>也许你会说我是一个梦想者，但我不是唯一的一个。</p>
@@ -381,13 +384,13 @@
   
     
     <div class="copyright">
-        <p><span>本文標題:</span><a href="/2015/12/20/聊聊老罗锤子便签里的Markdown/">聊聊老罗锤子便签里的Markdown</a></p>
+        <p><span>本文標題:</span><a href="/2017/11/24/安卓超快数据库ObjectBox使用及填坑指南/">安卓超快数据库ObjectBox使用及填坑指南</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主頁">安卓开发</a></p>
-        <p><span>發布時間:</span>2015-12-20, 16:35:06</p>
-        <p><span>最後更新:</span>2015-12-20, 16:35:59</p>
+        <p><span>發布時間:</span>2017-11-24, 18:01:04</p>
+        <p><span>最後更新:</span>2017-11-24, 18:06:48</p>
         <p>
-            <span>原始鏈接:</span><a class="post-url" href="/2015/12/20/聊聊老罗锤子便签里的Markdown/" title="聊聊老罗锤子便签里的Markdown">http://jp1017.top/2015/12/20/聊聊老罗锤子便签里的Markdown/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://jp1017.top/2015/12/20/聊聊老罗锤子便签里的Markdown/　　作者: 安卓开发" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
+            <span>原始鏈接:</span><a class="post-url" href="/2017/11/24/安卓超快数据库ObjectBox使用及填坑指南/" title="安卓超快数据库ObjectBox使用及填坑指南">http://jp1017.top/2017/11/24/安卓超快数据库ObjectBox使用及填坑指南/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://jp1017.top/2017/11/24/安卓超快数据库ObjectBox使用及填坑指南/　　作者: 安卓开发" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -399,16 +402,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2015/12/20/传统文化和第八识/">
-                    传统文化和第八识
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/12/20/由收花生所想到的/">
-                    由收花生所想到的
+                <a href="/2017/07/08/安卓开发中必备的那些神器APP/">
+                    安卓开发中必备的那些神器APP
                 </a>
             </div>
         
@@ -419,7 +416,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目錄</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown是什么"><span class="toc-number">2.</span> <span class="toc-text">Markdown是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown有什么用"><span class="toc-number">3.</span> <span class="toc-text">Markdown有什么用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown语法"><span class="toc-number">4.</span> <span class="toc-text">Markdown语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown编辑器"><span class="toc-number">5.</span> <span class="toc-text">Markdown编辑器</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ObjectBox是什么"><span class="toc-number">1.</span> <span class="toc-text">ObjectBox是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速接入"><span class="toc-number">2.</span> <span class="toc-text">快速接入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradle_添加依赖"><span class="toc-number">2.1.</span> <span class="toc-text">Gradle 添加依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目使用"><span class="toc-number">2.2.</span> <span class="toc-text">项目使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#填坑"><span class="toc-number">3.</span> <span class="toc-text">填坑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#找不到_MyObjectBox"><span class="toc-number">3.1.</span> <span class="toc-text">找不到 MyObjectBox</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库保存到了哪里"><span class="toc-number">3.2.</span> <span class="toc-text">数据库保存到了哪里</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ToMany_怎么使用"><span class="toc-number">3.3.</span> <span class="toc-text">ToMany 怎么使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询时设置查询个数"><span class="toc-number">3.4.</span> <span class="toc-text">查询时设置查询个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#找不到_“libobjectbox-so”"><span class="toc-number">3.5.</span> <span class="toc-text">找不到 “libobjectbox.so”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#升级"><span class="toc-number">3.6.</span> <span class="toc-text">升级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调试"><span class="toc-number">3.7.</span> <span class="toc-text">调试</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -476,7 +473,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"聊聊老罗锤子便签里的Markdown　| 安卓那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"安卓超快数据库ObjectBox使用及填坑指南　| 安卓那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -492,7 +489,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2015/12/20/聊聊老罗锤子便签里的Markdown/" data-title="聊聊老罗锤子便签里的Markdown" data-url="http://jp1017.top/2015/12/20/聊聊老罗锤子便签里的Markdown/"></div>
+    <div class="ds-thread" data-thread-key="2017/11/24/安卓超快数据库ObjectBox使用及填坑指南/" data-title="安卓超快数据库ObjectBox使用及填坑指南" data-url="http://jp1017.top/2017/11/24/安卓超快数据库ObjectBox使用及填坑指南/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -520,15 +517,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2015/12/20/传统文化和第八识/" title="上一篇: 传统文化和第八识">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主頁"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/12/20/由收花生所想到的/" title="下一篇: 由收花生所想到的">
+            <a href="/2017/07/08/安卓开发中必备的那些神器APP/" title="下一篇: 安卓开发中必备的那些神器APP">
                 <i class="fa fa-angle-right"></i>
             </a>
         
